@@ -71,7 +71,7 @@ const Registration = () => {
   };
   const validateEmail = (emailtest) => {
     if (!emailtest.trim()) {
-      setEmailError("");
+      setEmailError("Email is required");
       return false;
     }
     if (!emailRegex.test(emailtest)) {
