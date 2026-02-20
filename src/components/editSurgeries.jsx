@@ -14,9 +14,6 @@ const EditSurgery = () => {
     patientNumber: "",
     phoneNumber: "",
     surgeryDate: "",
-    stentRemovalDate: "",
-    patientReminder: false,
-    doctorReminder: false,
   });
 
   const convertToInputDate = (dateString) => {
@@ -106,16 +103,6 @@ const EditSurgery = () => {
                 className="form-control"
                 name="Email"
                 value={surgery.Email}
-                onChange={handleChange}
-              />
-            </div>
-            <div className="col-sm-5 form-group">
-              <label>Surgery Date:</label>
-              <input
-                type="date"
-                className="form-control"
-                name="surgeryDate"
-                value={surgery.surgeryDate}
                 onChange={handleChange}
               />
             </div>

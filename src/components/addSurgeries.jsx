@@ -39,7 +39,7 @@ const Addsurgery = () => {
     }
 
     if (!patientNumber.trim()) {
-      newErrors.patientNumber = "Patient number is required.";
+      newErrors.patientNumber = "Patient number is needed.";
     }
 
     if (!phoneNumber.trim()) {
