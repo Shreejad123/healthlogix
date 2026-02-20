@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import SurgeryTable from "./surgeryTable";
-import SurgerySearch from "./searchbar";
+import SurgerySearch from "./searchBar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./dashboard.module.css";
 

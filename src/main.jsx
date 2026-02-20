@@ -3,8 +3,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Registration from "./components/registrationForm"; // 👈 import with correct name
-import LoginForm from "./components/Login"; // 👈 import with correct name
+import Registration from "./components/registrationForm";
+import LoginForm from "./components/Login";
 import ForgotPassword from "./components/ForgotPassword";
 import AddSurgery from "./components/addSurgery";
 import Dashboard from "./components/dashboard";
@@ -16,10 +16,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        {/* Registration page */}
         <Route path="/" element={<LoginForm />} />
 
-        {/* Login page */}
         <Route path="/registration" element={<Registration />} />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
         <Route path="/dashboard" element={<Dashboard />} />
@@ -29,5 +27,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/patient/:index" element={<PatientDetails />} />
       </Routes>
     </BrowserRouter>
-  </React.StrictMode>
+  </React.StrictMode>,
 );

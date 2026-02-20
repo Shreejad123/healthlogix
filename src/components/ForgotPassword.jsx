@@ -6,7 +6,6 @@ const ForgotPassword = () => {
   const [emailError, setemailError] = useState("");
   const EmailRegex = /\S+@\S+\.\S+/;
   const validateEmail = (email) => {
-    // Email validation (simple regex)
     if (!email.trim()) {
       setemailError("Email is required");
       return false;
@@ -23,7 +22,6 @@ const ForgotPassword = () => {
     const isValid = validateEmail(email);
     if (isValid) {
       Swal.fire("Form submitted successfully");
-      // Implement authentication logic here (e.g., send to backend)
       console.log("Logging in with:", { email });
     }
   };
