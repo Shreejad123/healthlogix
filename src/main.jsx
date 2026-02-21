@@ -2,10 +2,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 import Registration from "./components/registrationForm";
-import LoginForm from "./components/Login";
-import ForgotPassword from "./components/ForgotPassword";
+import LoginForm from "./components/login";
+import ForgotPassword from "./components/forgotPassword";
 import AddSurgery from "./components/addSurgeries";
 import Dashboard from "./components/dashboard";
 import SurgeryTable from "./components/surgeryTable";
