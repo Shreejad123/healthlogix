@@ -9,7 +9,6 @@ const SurgerySearch = ({ searchTerm, handleSearch }) => {
         title="Type in a name"
         value={searchTerm}
         onChange={(e) => handleSearch(e.target.value)}
-        style={{ padding: "5px", marginBottom: "10px", width: "250px" }}
       />
     </form>
   );
