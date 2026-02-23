@@ -2,12 +2,12 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./login.module.css";
+import loginImage from "../assets/image.png";
 import Swal from "sweetalert2";
 
 function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [checkbox, setCheckbox] = useState(false);
   const [errors, setErrors] = useState("");
   const navigate = useNavigate();
 
@@ -49,7 +49,7 @@ function LoginForm() {
   return (
     <section id="loginView" className={styles.loginContainer}>
       <div className={styles.branding}>
-        <img src="/src/assets/image.png" alt="Background" />
+        <img src={loginImage} alt="Background" />
       </div>
       <div className={styles.auth}>
         <form className={styles.loginForm} onSubmit={handleSubmit}>
