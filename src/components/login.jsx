@@ -47,10 +47,14 @@ function LoginForm() {
     }
   };
   return (
-    <div className={styles.login}>
-      <div className={styles.loginContainer}>
+    <section id="loginView" className={styles.loginContainer}>
+      <div className={styles.branding}>
+        <img src="/src/assets/image.png" alt="Background" />
+      </div>
+      <div className={styles.auth}>
         <form className={styles.loginForm} onSubmit={handleSubmit}>
           <h3 className={styles.header}>Login</h3>
+
           <div>
             <label htmlFor="Email">Email</label>
 
@@ -93,12 +97,12 @@ function LoginForm() {
               Sign In
             </button>
           </div>
-          <div>
-            Don't have an account ? <a href="/registration"> Register </a>
-          </div>
         </form>
+        <div>
+          Don't have an account ? <a href="/registration"> Register </a>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 
