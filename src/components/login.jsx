@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import styles from "./login.module.css";
 import loginImage from "../assets/image.png";
 import Swal from "sweetalert2";
+import { FaGoogle } from "react-icons/fa";
+import { MdOutlineMail } from "react-icons/md";
 
 function LoginForm() {
   const [email, setEmail] = useState("");
@@ -47,62 +49,56 @@ function LoginForm() {
     }
   };
   return (
-    <section id="loginView" className={styles.loginContainer}>
-      <div className={styles.branding}>
-        <img src={loginImage} alt="Background" />
-      </div>
-      <div className={styles.auth}>
-        <form className={styles.loginForm} onSubmit={handleSubmit}>
-          <h3 className={styles.header}>Login</h3>
-
-          <div>
-            <label htmlFor="Email">Email</label>
-
-            <div className={styles.email}>
-              <input
-                type="email"
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              {errors.email && (
-                <p className={styles.errorMessage}>{errors.email}</p>
-              )}
-            </div>
-          </div>
-          <div className={styles.password}>
-            <label htmlFor="password">Password</label>
+    <div>
+      <div id="loginView" className={styles.loginContainer}>
+        <div className={styles.auth}>
+          <form className={styles.loginForm} onSubmit={handleSubmit}>
+            <h4 className={styles.loginHeader}>Hospital Management System</h4>
+            <hr className={styles.styledLine}></hr>
+            <h5 className={styles.header}>Login</h5>
             <div>
-              <input
-                type="password"
-                placeholder="Enter your password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              {errors.password && (
-                <p style={{ color: "red" }}>{errors.password}</p>
-              )}
+              <div className={styles.email}>
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />{" "}
+                {errors.email && (
+                  <p className={styles.errorMessage}>{errors.email}</p>
+                )}
+              </div>
             </div>
-          </div>
+            <div className={styles.password}>
+              <div>
+                <input
+                  type="password"
+                  placeholder="Enter your password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                {errors.password && (
+                  <p style={{ color: "red" }}>{errors.password}</p>
+                )}
+              </div>
+            </div>
+
+            <div>
+              {" "}
+              <button
+                type="submit"
+                className={`btn btn-primary ${styles.loginBtn}`}
+              >
+                Sign In
+              </button>
+            </div>
+          </form>
           <div className={styles.forgotPassword}>
-            <p></p>
             <a href="/Forgotpassword">Forgot Password?</a>
           </div>
-          <div>
-            {" "}
-            <button
-              type="submit"
-              className={`btn btn-primary ${styles.loginBtn}`}
-            >
-              Sign In
-            </button>
-          </div>
-        </form>
-        <div>
-          Don't have an account ? <a href="/registration"> Register </a>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 
