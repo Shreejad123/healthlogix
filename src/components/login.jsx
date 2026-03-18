@@ -4,8 +4,6 @@ import { useNavigate } from "react-router-dom";
 import styles from "./login.module.css";
 import loginImage from "../assets/image.png";
 import Swal from "sweetalert2";
-import { FaGoogle } from "react-icons/fa";
-import { MdOutlineMail } from "react-icons/md";
 
 function LoginForm() {
   const [email, setEmail] = useState("");
@@ -51,11 +49,14 @@ function LoginForm() {
   return (
     <div>
       <div id="loginView" className={styles.loginContainer}>
+        <div className={styles.branding}>
+          <img src={loginImage} alt="Background" />
+        </div>
         <div className={styles.auth}>
           <form className={styles.loginForm} onSubmit={handleSubmit}>
-            <h4 className={styles.loginHeader}>Hospital Management System</h4>
+            <h5 className={styles.loginHeader}>Hospital Management System</h5>
             <hr className={styles.styledLine}></hr>
-            <h5 className={styles.header}>Login</h5>
+            <h6 className={styles.header}>Login</h6>
             <div>
               <div className={styles.email}>
                 <input
@@ -93,9 +94,9 @@ function LoginForm() {
               </button>
             </div>
           </form>
-          <div className={styles.forgotPassword}>
+          {/* <div className={styles.forgotPassword}>
             <a href="/Forgotpassword">Forgot Password?</a>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

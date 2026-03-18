@@ -96,83 +96,79 @@ const Addsurgery = () => {
   };
 
   return (
-    <div>
-      <div className="container mt-3">
-        <form onSubmit={handleSubmit}>
-          <div className="row jumbotron box8">
-            <h2 className="text-center">Add Surgery</h2>
-            <div className="col-sm-5 form-group">
-              <label>Patient Full Name:</label>
-              <input
-                type="text"
-                placeholder="Enter your Full Name"
-                value={patientFullName}
-                onChange={(e) => setPatientFullName(e.target.value)}
-              />
-              {errors.patientFullName && (
-                <p style={{ color: "red" }}>{errors.patientFullName}</p>
-              )}
-            </div>
+    <div className={styles.addSurgery}>
+      <form onSubmit={handleSubmit} className={styles.formCard}>
+        <div className={styles.formRow}>
+          <h2 className="text-center">Add Surgery</h2>
 
-            <div className="col-sm-5 form-group">
-              <label>Patient Number / IP Number:</label>
-              <input
-                type="text"
-                placeholder="Enter your Patient Number"
-                value={patientNumber}
-                onChange={(e) => setPatientNumber(e.target.value)}
-              />
-              {errors.patientNumber && (
-                <p style={{ color: "red" }}>{errors.patientNumber}</p>
-              )}
-            </div>
-
-            <div className="col-sm-5 form-group">
-              <label>Phone Number:</label>
-              <input
-                type="text"
-                placeholder="Enter your Phone number"
-                value={phoneNumber}
-                onChange={(e) => setPhoneNumber(e.target.value)}
-              />
-              {errors.phoneNumber && (
-                <p style={{ color: "red" }}>{errors.phoneNumber}</p>
-              )}
-            </div>
-            <div className="col-sm-6 form-group">
-              <label>Email:</label>
-              <input
-                type="text"
-                placeholder="Enter your Email"
-                value={phoneNumber}
-                onChange={(e) => setPhoneNumber(e.target.value)}
-              />
-              {errors.phoneNumber && (
-                <p style={{ color: "red" }}>{errors.phoneNumber}</p>
-              )}
-            </div>
-            <div className="col-sm-5 form-group">
-              <label>Surgery Date:</label>
-              <input
-                placeholder="Enter your Surgery Date"
-                type="date"
-                value={surgeryDate}
-                onChange={(e) => setSurgeryDate(e.target.value)}
-              />
-
-              {errors.surgeryDate && (
-                <p style={{ color: "red" }}>{errors.surgeryDate}</p>
-              )}
-            </div>
-            <button
-              className={`btn btn-primary ${styles.saveBtn}`}
-              type="submit"
-            >
-              Save
-            </button>
+          <div className={styles.formGroup}>
+            <label>Patient Full Name:</label>
+            <input
+              type="text"
+              placeholder="Enter your Full Name"
+              value={patientFullName}
+              onChange={(e) => setPatientFullName(e.target.value)}
+            />
+            {errors.patientFullName && (
+              <p style={{ color: "red" }}>{errors.patientFullName}</p>
+            )}
           </div>
-        </form>
-      </div>
+
+          <div className={styles.formGroup}>
+            <label className={styles.label}>Patient Number:</label>
+            <input
+              type="text"
+              placeholder="Enter Patient Number"
+              value={patientNumber}
+              onChange={(e) => setPatientNumber(e.target.value)}
+            />
+            {errors.patientNumber && (
+              <p style={{ color: "red" }}>{errors.patientNumber}</p>
+            )}
+          </div>
+
+          <div className={styles.formGroup}>
+            <label>Phone Number:</label>
+            <input
+              type="text"
+              placeholder="Enter your Phone number"
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value)}
+            />
+            {errors.phoneNumber && (
+              <p style={{ color: "red" }}>{errors.phoneNumber}</p>
+            )}
+          </div>
+          <div className={styles.formGroup}>
+            <label>Type of Surgeries:</label>
+            <input
+              type="text"
+              placeholder="Enter Surgeries"
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value)}
+            />
+            {errors.phoneNumber && (
+              <p style={{ color: "red" }}>{errors.phoneNumber}</p>
+            )}
+          </div>
+          <div className={styles.formGroup}>
+            <label>Surgery Date:</label>
+            <input
+              placeholder="Enter your Surgery Date"
+              type="date"
+              value={surgeryDate}
+              onChange={(e) => setSurgeryDate(e.target.value)}
+            />
+
+            {errors.surgeryDate && (
+              <p style={{ color: "red" }}>{errors.surgeryDate}</p>
+            )}
+          </div>
+          <button className={`btn btn-primary ${styles.saveBtn}`} type="submit">
+            Save
+          </button>
+        </div>
+      </form>
     </div>
   );
 };
