@@ -3,6 +3,7 @@ import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import styles from "./surgeryTable.module.css";
 
 const SurgeryTable = ({ surgeryList = [], onEdit, onDelete }) => {
   const navigate = useNavigate();
@@ -36,21 +37,14 @@ const SurgeryTable = ({ surgeryList = [], onEdit, onDelete }) => {
 
   return (
     <div>
-      <table
-        className="table table-striped"
-        border="1"
-        cellPadding="8"
-        style={{ marginTop: "20px" }}
-      >
-        <thead className="thead-light">
+      <table>
+        <thead className={styles.patientTable}>
           <tr>
             <th>Patient Name</th>
             <th>Patient No.</th>
             <th>Phone</th>
             <th>Surgery Date</th>
-            <th>Stent Removal</th>
-            <th>Patient Reminder</th>
-            <th>Doctor Reminder</th>
+            <th>Type Of Surgery</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -65,24 +59,30 @@ const SurgeryTable = ({ surgeryList = [], onEdit, onDelete }) => {
                 <td>{surgery.patientNumber}</td>
                 <td>{surgery.phoneNumber}</td>
                 <td>{formatDate(surgery.surgeryDate)}</td>
-                <td>{formatDate(surgery.stentRemovalDate)}</td>
-                <td>{surgery.patientReminder ? "✅" : "❌"}</td>
-                <td>{surgery.doctorReminder ? "✅" : "❌"}</td>
+                <td>{surgery.surgery}</td>
                 <td>
-                  <FaEdit
+                  <button
+                    type="button"
+                    className="btn btn-info"
                     style={{ cursor: "pointer", marginRight: "10px" }}
                     onClick={(e) => {
                       e.stopPropagation();
                       onEdit(startIndex + index);
                     }}
-                  />
-                  <MdDelete
-                    style={{ color: "red", cursor: "pointer" }}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      onDelete(startIndex + index);
-                    }}
-                  />
+                  >
+                    Edit &nbsp;
+                    <FaEdit />
+                  </button>
+                  <button type="button" className="btn btn-danger">
+                    Delete &nbsp;
+                    <MdDelete
+                      style={{ cursor: "pointer" }}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onDelete(startIndex + index);
+                      }}
+                    />
+                  </button>
                 </td>
               </tr>
             ))

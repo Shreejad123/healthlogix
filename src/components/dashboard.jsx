@@ -52,9 +52,12 @@ const Dashboard = () => {
 
   return (
     <div className={styles.dashboardContainer}>
-      <h1 className="text mb-4">Surgeries</h1>
+      <h1 className={styles.header}>Surgeries</h1>
       <SurgerySearch searchTerm={searchTerm} handleSearch={handleSearch} />
-      <button onClick={handleAddClick} className="btn btn-secondary">
+      <button
+        onClick={handleAddClick}
+        className={`btn btn-primary ${styles.customBtn}`}
+      >
         Add Surgery
       </button>
       {surgeryList.length === 0 ? (

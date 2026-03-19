@@ -5,7 +5,7 @@ body {
   justify-content: center;
   align-items: center;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: black;
+  background-color: lightblue;
 }
 .loginContainer {
   padding: 15px;
@@ -33,7 +33,7 @@ body {
   border-radius: 6px;
   padding: 6px;
   margin-bottom: 10px;
-  width: 70%;
+  width: 80%;
 }
 .loginContainer input:focus {
   border-color: #006241;
@@ -61,7 +61,7 @@ body {
 .loginBtn {
   margin-bottom: 20px;
 
-  width: 70%;
+  width: 80%;
 }
 
 .loginBtn:hover {

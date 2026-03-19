@@ -10,9 +10,7 @@ const Addsurgery = () => {
   const [patientNumber, setPatientNumber] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [surgeryDate, setSurgeryDate] = useState("");
-  const [stentRemovalDate, setStentRemovalDate] = useState("");
-  const [patientReminder, setPatientReminder] = useState(false);
-  const [doctorReminder, setDoctorReminder] = useState(false);
+  const [surgery, setSurgery] = useState("");
 
   const [errors, setErrors] = useState({});
   const [surgeryList, setSurgeryList] = useState([]);
@@ -47,13 +45,11 @@ const Addsurgery = () => {
     } else if (!phoneRegex.test(phoneNumber)) {
       newErrors.phoneNumber = "Phone number must be exactly 10 digits.";
     }
-
+    if (!surgery.trim()) {
+      newErrors.surgery = "type of surgery  is needed.";
+    }
     if (!surgeryDate) {
       newErrors.surgeryDate = "Surgery date is required.";
-    }
-
-    if (!stentRemovalDate) {
-      newErrors.stentRemovalDate = "Stent removal date is required.";
     }
 
     setErrors(newErrors);
@@ -69,9 +65,7 @@ const Addsurgery = () => {
         patientNumber,
         phoneNumber,
         surgeryDate,
-        stentRemovalDate,
-        patientReminder,
-        doctorReminder,
+        surgery,
       };
 
       const updatedList = [...surgeryList, newSurgery];
@@ -85,9 +79,7 @@ const Addsurgery = () => {
       setPatientNumber("");
       setPhoneNumber("");
       setSurgeryDate("");
-      setStentRemovalDate("");
-      setPatientReminder(false);
-      setDoctorReminder(false);
+      SetSurgery("");
 
       // Redirect to surgeries table
       navigate("/dashboard");
@@ -144,12 +136,10 @@ const Addsurgery = () => {
             <input
               type="text"
               placeholder="Enter Surgeries"
-              value={phoneNumber}
-              onChange={(e) => setPhoneNumber(e.target.value)}
+              value={surgery}
+              onChange={(e) => setSurgery(e.target.value)}
             />
-            {errors.phoneNumber && (
-              <p style={{ color: "red" }}>{errors.phoneNumber}</p>
-            )}
+            {errors.surgery && <p style={{ color: "red" }}>{errors.surgery}</p>}
           </div>
           <div className={styles.formGroup}>
             <label>Surgery Date:</label>
