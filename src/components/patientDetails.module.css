@@ -20,6 +20,8 @@
   margin-bottom: 20px;
   font-size: 28px;
   font-weight: 600;
+  border-bottom: 2px solid #0d3b66;
+  padding-bottom: 20px;
 }
 
 /* Each row for patient detail */

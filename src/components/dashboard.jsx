@@ -53,13 +53,19 @@ const Dashboard = () => {
   return (
     <div className={styles.dashboardContainer}>
       <h1 className={styles.header}>Surgeries</h1>
-      <SurgerySearch searchTerm={searchTerm} handleSearch={handleSearch} />
-      <button
-        onClick={handleAddClick}
-        className={`btn btn-primary ${styles.customBtn}`}
-      >
-        Add Surgery
-      </button>
+      <div className={styles.filter}>
+        <SurgerySearch searchTerm={searchTerm} handleSearch={handleSearch} />
+        <select>
+          <option value="asc">Sort by Price low to High:</option>
+          <option value="desc">Sort by Price High to Low:</option>
+        </select>
+        <button
+          onClick={handleAddClick}
+          className={`btn btn-primary ${styles.customBtn}`}
+        >
+          Add Surgery
+        </button>
+      </div>
       {surgeryList.length === 0 ? (
         <p style={{ color: "red", marginTop: "20px" }}>
           No surgeries added yet.

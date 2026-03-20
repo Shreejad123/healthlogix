@@ -3,6 +3,8 @@ import { useNavigate, useParams } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./editSurgeries.module.css";
 import Swal from "sweetalert2";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const EditSurgery = () => {
   const { index } = useParams();
@@ -56,8 +58,10 @@ const EditSurgery = () => {
 
     setSurgeryList(updatedList);
     localStorage.setItem("surgeryList", JSON.stringify(updatedList));
-    Swal.fire("Surgery details updated");
-    navigate("/dashboard");
+    toast.success("surgery details updated sucessfully!", { autoClose: 1000 });
+    setTimeout(() => {
+      navigate("/dashboard");
+    }, 1500);
   };
 
   return (
@@ -120,6 +124,7 @@ const EditSurgery = () => {
               </button>
             </div>
           </div>
+          <ToastContainer />
         </form>
       </div>
     </div>

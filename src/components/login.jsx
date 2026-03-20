@@ -3,7 +3,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./login.module.css";
 import loginImage from "../assets/image.png";
-import Swal from "sweetalert2";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function LoginForm() {
   const [email, setEmail] = useState("");
@@ -40,11 +41,13 @@ function LoginForm() {
         password,
       };
       console.log("loginDetails", loginDetails);
-      Swal.fire("Login sucessful!");
 
+      toast.success("logging in!", { autoClose: 1000 });
       console.log("Logging in with:", { email, password });
-      navigate("/dashboard");
     }
+    setTimeout(() => {
+      navigate("/dashboard");
+    }, 1500);
   };
   return (
     <div>
@@ -94,9 +97,7 @@ function LoginForm() {
               </button>
             </div>
           </form>
-          {/* <div className={styles.forgotPassword}>
-            <a href="/Forgotpassword">Forgot Password?</a>
-          </div> */}
+          <ToastContainer />
         </div>
       </div>
     </div>
