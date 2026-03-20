@@ -1,6 +1,10 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import styles from "./patientDetails.module.css";
+import { IoPerson, IoCall } from "react-icons/io5";
+import { MdDateRange } from "react-icons/md";
+import { GiHeartPlus } from "react-icons/gi";
+import { FaIdBadge } from "react-icons/fa";
 
 const PatientDetails = () => {
   const { index } = useParams();
@@ -16,63 +20,66 @@ const PatientDetails = () => {
   }, [index]);
 
   if (!patient) {
-    return <p>Loading patient details...</p>;
+    return <p className={styles.loading}>Loading patient details...</p>;
   }
 
   return (
-    <div className={styles.container}>
-      <div>
-        <div className={styles.patientdeatils}>
-          <h2 className="text-center mb-4">Patient Details</h2>
-          <p>
-            <div className="col-sm">
-              <strong>Patient Name: </strong>
-              <div className="col-sm">{patient.patientFullName}</div>
-            </div>
-          </p>
-          <p>
-            <div className="col-sm">
-              <strong>Patient Number:</strong>
-              {patient.patientNumber}
-            </div>
-          </p>
-          <p>
-            <div>
-              <strong>Phone: </strong>
-              {patient.phoneNumber}
-            </div>
-          </p>
-          <p>
-            <div>
-              <strong>Surgery Date: </strong>
-              {patient.surgeryDate}
-            </div>
-          </p>
-          <p>
-            <div>
-              <strong>Stent Removal Date:</strong> {patient.stentRemovalDate}
-            </div>
-          </p>
-          <p>
-            <div>
-              <strong>Patient Reminder: </strong>
-              {patient.patientReminder ? "Yes" : "No"}
-            </div>
-          </p>
-          <p>
-            <div>
-              <strong>Doctor Reminder:</strong>{" "}
-              {patient.doctorReminder ? "Yes" : "No"}
-            </div>
-          </p>
+    <div className={styles.wrapper}>
+      <div className={styles.card}>
+        <h2 className={styles.title}>Patient Details</h2>
 
-          <button
-            className="btn btn-info"
-            onClick={() => navigate("/dashboard")}
-          >
-            Back to Dashboard
-          </button>
+        <div className={styles.detailRow}>
+          <IoPerson className={styles.icon} />
+          <div>
+            <span className={styles.label}>Patient Name:</span>
+            <span className={styles.value}>{patient.patientFullName}</span>
+          </div>
         </div>
+
+        <div className={styles.detailRow}>
+          <FaIdBadge className={styles.icon} />
+          <div>
+            <span className={styles.label}>Patient Number:</span>
+            <span className={styles.value}>{patient.patientNumber}</span>
+          </div>
+        </div>
+
+        <div className={styles.detailRow}>
+          <IoCall className={styles.icon} />
+          <div>
+            <span className={styles.label}>Phone:</span>
+            <span className={styles.value}>{patient.phoneNumber}</span>
+          </div>
+        </div>
+
+        <div className={styles.detailRow}>
+          <MdDateRange className={styles.icon} />
+          <div>
+            <span className={styles.label}>Surgery Date:</span>
+            <span className={styles.value}>{patient.surgeryDate}</span>
+          </div>
+        </div>
+
+        <div className={styles.detailRow}>
+          <GiHeartPlus className={styles.icon} />
+          <div>
+            <span className={styles.label}>Surgery Type:</span>
+            <span className={styles.value}>{patient.surgery}</span>
+          </div>
+        </div>
+
+        <button
+          className={styles.backButton}
+          onClick={() => navigate("/dashboard")}
+        >
+          Back to Dashboard
+        </button>
+        <button
+          className="btn btn-danger"
+          onClick={() => navigate(`/edit-surgery/${index}`)}
+        >
+          Edit Patient
+        </button>
       </div>
     </div>
   );

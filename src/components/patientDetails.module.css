@@ -1,14 +1,77 @@
-.container {
-  background-color: white;
-  width: 600px;
-  height: 600px;
-  margin-top: 60px;
+/* Wrapper for centering card */
+
+/* Card container */
+.card {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 600px;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
-.patientDetails {
-  background-color: white;
-  width: 600px;
-  height: 600px;
+
+/* Title */
+.title {
+  text-align: center;
+  color: #0d3b66;
+  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 600;
 }
-.patientdeatils {
-  margin-left: 20px;
+
+/* Each row for patient detail */
+.detailRow {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 18px;
+  color: #1e2a38;
+}
+
+/* Icon style */
+.icon {
+  color: #0d3b66;
+  font-size: 24px;
+  min-width: 30px;
+}
+
+/* Labels */
+.label {
+  font-weight: 600;
+  margin-right: 5px;
+}
+
+/* Values */
+.value {
+  color: #3a3a3a;
+}
+
+/* Back button */
+.backButton {
+  margin-top: 25px;
+  padding: 12px;
+  background-color: #0d3b66;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.backButton:hover {
+  background-color: #094070;
+}
+
+/* Loading state */
+.loading {
+  text-align: center;
+  font-size: 20px;
+  color: #0d3b66;
+}
+.card:hover {
+  transform: translateY(-3px);
 }
