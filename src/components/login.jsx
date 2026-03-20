@@ -57,8 +57,8 @@ function LoginForm() {
         </div>
         <div className={styles.auth}>
           <form className={styles.loginForm} onSubmit={handleSubmit}>
-            <h5 className={styles.loginHeader}>Hospital Management System</h5>
-            <hr className={styles.styledLine}></hr>
+            <h4 className={styles.loginHeader}>Hospital Management System</h4>
+
             <h6 className={styles.header}>Login</h6>
             <div>
               <div className={styles.email}>
