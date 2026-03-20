@@ -6,7 +6,7 @@ import { MdDateRange } from "react-icons/md";
 import { GiHeartPlus } from "react-icons/gi";
 import { FaIdBadge } from "react-icons/fa";
 
-const PatientDetails = () => {
+const PatientDetails = ({}) => {
   const { index } = useParams();
   const navigate = useNavigate();
   const [patient, setPatient] = useState(null);

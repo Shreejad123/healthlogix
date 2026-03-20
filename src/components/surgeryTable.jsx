@@ -73,15 +73,16 @@ const SurgeryTable = ({ surgeryList = [], onEdit, onDelete }) => {
                     Edit &nbsp;
                     <FaEdit />
                   </button>
-                  <button type="button" className="btn btn-danger">
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onDelete(startIndex + index);
+                    }}
+                    type="button"
+                    className="btn btn-danger"
+                  >
                     Delete &nbsp;
-                    <MdDelete
-                      style={{ cursor: "pointer" }}
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        onDelete(startIndex + index);
-                      }}
-                    />
+                    <MdDelete />
                   </button>
                 </td>
               </tr>

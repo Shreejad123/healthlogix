@@ -65,58 +65,61 @@ const EditSurgery = () => {
       <div className={styles.editsurgeriesContainer}>
         <form onSubmit={handleSubmit}>
           <div className={styles.form}>
-            <h2 className="text-center">Edit Surgery</h2>
-            <div className="col-sm-5 form-group">
+            <h2 className>Edit Surgery</h2>
+            <div className>
               <label>Patient Full Name:</label>
               <input
                 type="text"
-                className="form-control"
+                className
                 name="patientFullName"
                 value={surgery.patientFullName}
                 onChange={handleChange}
               />
             </div>
-            <div className="col-sm-5 form-group">
+            <div>
               <label>Patient Number:</label>
               <input
                 type="text"
-                className="form-control"
                 name="patientNumber"
                 value={surgery.patientNumber}
                 onChange={handleChange}
               />
             </div>
-            <div className="col-sm-5 form-group">
+            <div className>
               <label>Phone Number:</label>
               <input
                 type="text"
-                className="form-control"
                 name="phoneNumber"
                 value={surgery.phoneNumber}
                 onChange={handleChange}
               />
             </div>
-            <div className="col-sm-5 form-group">
-              <label>Email:</label>
+            <div className>
+              <label>Type of Surgery:</label>
               <input
                 type="text"
-                className="form-control"
+                className
                 name="Email"
-                value={surgery.Email}
+                value={surgery.surgery}
                 onChange={handleChange}
               />
             </div>
+            <div className={styles.button}>
+              <button
+                type="submit"
+                className={`btn btn-danger ${styles.myBtn}`}
+              >
+                Update
+              </button>
+              <button
+                type="button"
+                onClick={() => navigate("/dashboard")}
+                className={`btn btn-info ${styles.myBtn}`}
+              >
+                Cancel
+              </button>
+            </div>
           </div>
-          <button type="submit" className={`btn btn-primary ${styles.myBtn}`}>
-            Update
-          </button>
-          <button
-            type="button"
-            onClick={() => navigate("/dashboard")}
-            className={`btn btn-secondary ${styles.myBtn}`}
-          >
-            Cancel
-          </button>
         </form>
       </div>
     </div>
