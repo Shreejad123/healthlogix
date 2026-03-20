@@ -1,9 +1,8 @@
-import styles from "./searchBar.module.css";
 const SurgerySearch = ({ searchTerm, handleSearch }) => {
   return (
     <form className="form-inline my-2 my-lg-0">
       <input
-        className={`form-control search-input ${styles.customSearchbar}`}
+        className="form-control search-input"
         type="search"
         placeholder="Search for names..."
         aria-label="Search"
