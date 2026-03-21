@@ -5,6 +5,7 @@ import styles from "./navBar.module.css";
 import { useNavigate } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
+import loginImage from "../assets/hospitalLogo.png";
 
 import { useState } from "react";
 
@@ -19,34 +20,23 @@ function NavBar() {
         <div onClick={handleClick}></div>
         <ul>
           <li>
+            <img src={loginImage} alt="Background" width={100} />
             <span className={styles.shopEase} onClick={() => navigate("/")}>
-              <IoCartSharp size={25} />
-              &nbsp;Hospital Mangement System
+              Hospital Mangement System
             </span>
           </li>
           <li onClick={closeMobileMenu}>
-            <span onClick={() => navigate("/")}>
-              <FaHome className={styles.icons} size={25} />
-              &nbsp; Home
-            </span>
+            <span onClick={() => navigate("/")}> Home</span>
           </li>
           <li onClick={closeMobileMenu}>
-            <span onClick={() => navigate("/login")}>
-              <IoPersonSharp size={22} className={styles.icons} /> &nbsp; Login
-            </span>
+            <span onClick={() => navigate("/login")}>Login</span>
           </li>
 
           <li onClick={closeMobileMenu}>
-            <span onClick={() => navigate("/cart")}>
-              <IoCartSharp size={22} className={styles.icons} />
-              &nbsp; dashboard
-            </span>
+            <span onClick={() => navigate("/cart")}>dashboard</span>
           </li>
           <li onClick={closeMobileMenu}>
-            <span onClick={() => navigate("/Wishlist")}>
-              <FaRegHeart size={20} className={styles.icons} />
-              &nbsp;Wishlist
-            </span>
+            <button className="btn btn-danger">Sign up</button>
           </li>
         </ul>
       </div>

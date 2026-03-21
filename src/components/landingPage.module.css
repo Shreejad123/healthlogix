@@ -1,0 +1,55 @@
+.image {
+  border-radius: 8px;
+  margin-right: 5%;
+}
+.image:hover {
+  transform: scale(1.1);
+}
+.landingPage {
+  display: flex;
+  margin-top: 5%;
+}
+.heroSection {
+  margin-left: 10%;
+  margin-top: 5%;
+}
+
+.card {
+  margin-top: 10%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  height: 100%;
+  padding: 50px;
+  width: 50%;
+  margin-left: 15%;
+}
+p {
+  animation-duration: 1s;
+  animation-name: slide-in;
+}
+
+@keyframes slide-in {
+  from {
+    translate: 1vw 0;
+    scale: 200% 1;
+  }
+
+  to {
+    translate: 0 0;
+    scale: 100% 1;
+  }
+}
+.header {
+  animation-duration: 1s;
+  animation-name: slidein;
+}
+@keyframes slidein {
+  from {
+    translate: 1vw 0;
+    scale: 200% 1;
+  }
+
+  to {
+    translate: 0 0;
+    scale: 100% 1;
+  }
+}
