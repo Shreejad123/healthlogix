@@ -20,20 +20,23 @@ function NavBar() {
         <div onClick={handleClick}></div>
         <ul>
           <li>
-            <img src={loginImage} alt="Background" width={100} />
-            <span className={styles.shopEase} onClick={() => navigate("/")}>
-              Hospital Mangement System
-            </span>
+            <img
+              src={loginImage}
+              alt="Background"
+              width={100}
+              height={60}
+              onClick={() => navigate("/")}
+            />
           </li>
           <li onClick={closeMobileMenu}>
-            <span onClick={() => navigate("/")}> Home</span>
+            <span onClick={() => navigate("/landingPage")}> Home</span>
           </li>
           <li onClick={closeMobileMenu}>
-            <span onClick={() => navigate("/login")}>Login</span>
+            <span onClick={() => navigate("/")}>Login</span>
           </li>
 
           <li onClick={closeMobileMenu}>
-            <span onClick={() => navigate("/cart")}>dashboard</span>
+            <span onClick={() => navigate("/dashboard")}>dashboard</span>
           </li>
           <li onClick={closeMobileMenu}>
             <button className="btn btn-danger">Sign up</button>

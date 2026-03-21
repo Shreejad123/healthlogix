@@ -6,30 +6,21 @@ ul {
 }
 span {
   font-weight: 600;
-  font-size: 14px;
+  font-size: 18px;
 }
 ul li {
   color: black;
-  margin-left: auto;
   padding: 14px 16px;
   text-decoration: none;
+  gap: 10px;
+  margin-left: 5%;
+  margin-top: 1%;
 }
 
 ul li a:hover {
   background-color: #111111;
 }
 
-.shopEase {
-  color: black;
-  font-size: 30px;
-
-  width: 100%;
-  cursor: pointer;
-}
-
-.icons:hover {
-  cursor: pointer;
-}
 .header {
   width: 80rem;
   position: relative;
