@@ -1,20 +1,18 @@
 body {
-  margin: 5%;
-
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+
 .loginContainer {
-  padding: 15px;
+  padding: 10px;
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
   width: 90%;
   height: 80%;
   display: flex;
-
   border-radius: 10px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
@@ -23,7 +21,9 @@ body {
   box-shadow: 0 12px 48px 0 rgba(31, 38, 135, 0.5);
 }
 .branding {
-  padding: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 0%;
   flex: 1;
 }
 .loginContainer h2 {
@@ -42,9 +42,7 @@ body {
 .loginContainer input:focus {
   border-color: #006241;
 }
-.custom-checkbox {
-  margin-right: 5px;
-}
+
 .header {
   margin-bottom: 20px;
   text-align: center;
@@ -58,10 +56,6 @@ body {
 .password {
   margin-bottom: 10px;
 }
-.forgotPassword {
-  margin-bottom: 15px;
-  text-align: center;
-}
 .loginBtn {
   margin-bottom: 20px;
 
@@ -72,17 +66,15 @@ body {
   transform: translateY(-2px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
-.forgotPassword {
-  text-align: right;
-}
 
 .loginHeader {
-  text-align: left;
-  margin-left: 8%;
+  text-align: center;
+
   padding-bottom: 10px;
 }
 .loginForm {
-  margin-top: 25%;
+  margin-top: 15%;
+  margin-right: 0;
 }
 .branding img {
   width: 80%;

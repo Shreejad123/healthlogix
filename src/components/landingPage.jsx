@@ -1,7 +1,10 @@
 import loginImage from "../assets/doctor.jpg";
 import NavBar from "./navBar";
 import styles from "./landingPage.module.css";
+import { useNavigate } from "react-router-dom";
+
 function LandingPage() {
+  const navigate = useNavigate();
   return (
     <>
       <div>
@@ -19,7 +22,9 @@ function LandingPage() {
               track of patient information, medical history, and surgery
               details.
             </p>
-            <button className="btn btn-info">Get Started</button>
+            <button className="btn btn-info" onClick={() => navigate("/login")}>
+              Get Started
+            </button>
           </div>
           <img src={loginImage} alt="Background" className={styles.image} />
         </div>

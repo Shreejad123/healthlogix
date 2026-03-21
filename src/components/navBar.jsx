@@ -1,10 +1,5 @@
-import { IoCartSharp } from "react-icons/io5";
-import { IoPersonSharp } from "react-icons/io5";
-import { MdGTranslate } from "react-icons/md";
 import styles from "./navBar.module.css";
 import { useNavigate } from "react-router-dom";
-import { FaHome } from "react-icons/fa";
-import { FaRegHeart } from "react-icons/fa";
 import loginImage from "../assets/hospitalLogo.png";
 
 import { useState } from "react";
@@ -19,24 +14,24 @@ function NavBar() {
       <div className={styles.header}>
         <div onClick={handleClick}></div>
         <ul>
-          <li>
-            <img
-              src={loginImage}
-              alt="Background"
-              width={100}
-              height={60}
-              onClick={() => navigate("/")}
-            />
+          <img
+            src={loginImage}
+            alt="Background"
+            width={100}
+            height={100}
+            onClick={() => navigate("/")}
+            className={styles.image}
+          />
+
+          <li onClick={closeMobileMenu}>
+            <span onClick={() => navigate("/")}> Home</span>
           </li>
           <li onClick={closeMobileMenu}>
-            <span onClick={() => navigate("/landingPage")}> Home</span>
-          </li>
-          <li onClick={closeMobileMenu}>
-            <span onClick={() => navigate("/")}>Login</span>
+            <span onClick={() => navigate("/login")}>Login</span>
           </li>
 
           <li onClick={closeMobileMenu}>
-            <span onClick={() => navigate("/dashboard")}>dashboard</span>
+            <span>Add Patient</span>
           </li>
           <li onClick={closeMobileMenu}>
             <button className="btn btn-danger">Sign up</button>

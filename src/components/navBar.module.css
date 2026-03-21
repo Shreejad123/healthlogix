@@ -1,6 +1,6 @@
 ul {
   list-style-type: none;
-  margin: 0;
+
   padding: 0;
   display: flex;
 }
@@ -8,13 +8,16 @@ span {
   font-weight: 600;
   font-size: 18px;
 }
+.image {
+  margin-left: 40px;
+}
 ul li {
   color: black;
   padding: 14px 16px;
   text-decoration: none;
   gap: 10px;
-  margin-left: 5%;
-  margin-top: 1%;
+  margin: 1%;
+  margin-left: 10%;
 }
 
 ul li a:hover {
