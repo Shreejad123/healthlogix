@@ -1,5 +1,5 @@
 body {
-  margin: 0;
+  margin: 5%;
 
   display: flex;
   justify-content: center;
@@ -8,7 +8,9 @@ body {
 }
 .loginContainer {
   padding: 15px;
-  background-color: white;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   width: 90%;
   height: 80%;
   display: flex;
@@ -16,10 +18,13 @@ body {
   border-radius: 10px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
+.loginContainer:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 48px 0 rgba(31, 38, 135, 0.5);
+}
 .branding {
   padding: 20px;
   flex: 1;
-  display: flex;
 }
 .loginContainer h2 {
   margin-bottom: 20px;
@@ -43,7 +48,7 @@ body {
 .header {
   margin-bottom: 20px;
   text-align: center;
-  margin-top: 5%;
+
   margin-right: 90%;
 }
 .errorMessage {
@@ -70,16 +75,10 @@ body {
 .forgotPassword {
   text-align: right;
 }
-.styledLine {
-  width: 100%;
-  border: none; /* Removes the default border */
-  height: 1px; /* Sets the line thickness */
-  background-color: #000; /* Sets the line color */
-}
+
 .loginHeader {
   text-align: left;
-
-  border-bottom: 2px solid #0d3b66;
+  margin-left: 8%;
   padding-bottom: 10px;
 }
 .loginForm {
@@ -89,12 +88,19 @@ body {
   width: 80%;
   height: 80%;
 }
+.image {
+  border-radius: 10px;
+  margin-top: 5%;
+  margin-left: 8%;
+}
 @media (max-width: 768px) {
   .loginContainer {
     flex-direction: column;
     padding: 20px;
-    width: 90%;
-    margin-left: 20px;
+    width: 100%;
+    display: flex;
+
+    margin-top: 15%;
   }
 
   .loginForm {

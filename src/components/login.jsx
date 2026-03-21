@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./login.module.css";
-import loginImage from "../assets/image.png";
+import loginImage from "../assets/doctorImage.jpg";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -53,13 +53,12 @@ function LoginForm() {
     <div>
       <div id="loginView" className={styles.loginContainer}>
         <div className={styles.branding}>
-          <img src={loginImage} alt="Background" />
+          <h4 className={styles.loginHeader}>Hospital Management System</h4>
+          <img src={loginImage} alt="Background" className={styles.image} />
         </div>
         <div className={styles.auth}>
           <form className={styles.loginForm} onSubmit={handleSubmit}>
-            <h4 className={styles.loginHeader}>Hospital Management System</h4>
-
-            <h6 className={styles.header}>Login</h6>
+            <h4 className={styles.header}>Login</h4>
             <div>
               <div className={styles.email}>
                 <input
