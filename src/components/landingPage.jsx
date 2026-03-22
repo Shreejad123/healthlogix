@@ -14,7 +14,7 @@ function LandingPage() {
             <h2 className={styles.header}>
               Streamline Your Surgery <br></br>Management
             </h2>
-            <p>
+            <p className={styles.paragraph}>
               Simplify scheduling and managing surgeries with <br></br>our
               all-in-one solution for hospitals. From patient records to surgery
               scheduling — everything in one place, fast and secure. Easily book

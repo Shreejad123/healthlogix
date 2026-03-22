@@ -2,9 +2,7 @@
   border-radius: 8px;
   margin-right: 5%;
 }
-.image:hover {
-  transform: scale(1.1);
-}
+
 .landingPage {
   display: flex;
   margin-top: 5%;
@@ -22,7 +20,7 @@
   width: 50%;
   margin-left: 15%;
 }
-p {
+.paragraph {
   animation-duration: 1s;
   animation-name: slide-in;
 }

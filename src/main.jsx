@@ -11,6 +11,7 @@ import LandingPage from "./components/landingPage";
 import SurgeryTable from "./components/surgeryTable";
 import EditSurgery from "./components/editSurgeries";
 import PatientDetails from "./components/patientDetails";
+import PrivateRoute from "./components/privateRoute";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -20,7 +21,14 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 
         <Route path="/registration" element={<Registration />} />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route
+          path="/dashboard"
+          element={
+            <PrivateRoute>
+              <Dashboard />
+            </PrivateRoute>
+          }
+        />
         <Route path="/add-surgery" element={<AddSurgery />} />
         <Route path="/" element={<LandingPage />} />
         <Route path="/SurgeryTable" element={<SurgeryTable />} />

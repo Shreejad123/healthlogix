@@ -5,6 +5,7 @@ import styles from "./login.module.css";
 import loginImage from "../assets/doctorImage.jpg";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Link } from "react-router-dom";
 
 function LoginForm() {
   const [email, setEmail] = useState("");
@@ -36,18 +37,25 @@ function LoginForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      const loginDetails = {
-        email,
-        password,
-      };
-      console.log("loginDetails", loginDetails);
+      const storedUser = JSON.parse(localStorage.getItem("user"));
 
-      toast.success("logging in!", { autoClose: 1000 });
-      console.log("Logging in with:", { email, password });
+      if (!storedUser) {
+        alert("No user found. Please signup first.");
+        return;
+      }
+
+      if (storedUser.email === email && storedUser.password === password) {
+        localStorage.setItem("isLoggedIn", "true");
+        alert("Login successful!");
+        toast.success("logging in!", { autoClose: 1000 });
+        console.log("Logging in with:", { email, password });
+      } else {
+        toast.error("Invalid email or password", { autoClose: 1000 });
+      }
     }
-    setTimeout(() => {
-      navigate("/dashboard");
-    }, 1500);
+    // setTimeout(() => {
+    //   navigate("/dashboard");
+    // }, 1500);
   };
   return (
     <div>
@@ -95,10 +103,13 @@ function LoginForm() {
                 Sign In
               </button>
             </div>
+            <p className={styles.signup}>
+              Don't have an account? <Link to="/registration">Sign up</Link>
+            </p>
           </form>
-          <ToastContainer />
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 }

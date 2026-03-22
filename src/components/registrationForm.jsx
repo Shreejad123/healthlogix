@@ -125,8 +125,15 @@ const Registration = () => {
         confirmPassword,
       });
 
+      const user = { email, password };
+
+      // Save user in localStorage
+      localStorage.setItem("user", JSON.stringify(user));
+
+      alert("Signup successful!");
+      navigate("/login");
       Swal.fire("Registration successful!", "success");
-      navigate("/dashboard");
+      console.log("Email", email, "password", password);
       // reset fields
       setFirstName("");
       setLastName("");
@@ -251,7 +258,7 @@ const Registration = () => {
               Submit
             </button>
             <div className={styles.link}>
-              Already have an account ? <a href="/">Login</a>
+              Already have an account ? <a href="/login">Login</a>
             </div>
           </div>
         </div>

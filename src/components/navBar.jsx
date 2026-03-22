@@ -34,7 +34,12 @@ function NavBar() {
             <span>Add Patient</span>
           </li>
           <li onClick={closeMobileMenu}>
-            <button className="btn btn-danger">Sign up</button>
+            <button
+              className="btn btn-danger"
+              onClick={() => navigate("/registration")}
+            >
+              Sign up
+            </button>
           </li>
         </ul>
       </div>

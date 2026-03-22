@@ -43,7 +43,9 @@ body {
 .loginContainer input:focus {
   border-color: #006241;
 }
-
+.signup {
+  margin-left: 5%;
+}
 .header {
   margin-bottom: 20px;
   text-align: center;
