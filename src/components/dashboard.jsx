@@ -26,17 +26,14 @@ const Dashboard = () => {
             .includes(searchTerm.toLowerCase()),
         );
 
-  // Add new surgery
   const handleAddClick = () => {
     navigate("/add-surgery");
   };
 
-  // Edit surgery (passed to SurgeryTable)
   const handleEdit = (index) => {
     navigate(`/edit-surgery/${index}`);
   };
 
-  // Delete surgery (passed to SurgeryTable)
   const handleDelete = (index) => {
     if (window.confirm("Are you sure you want to delete this record?")) {
       const updatedList = surgeryList.filter((_, i) => i !== index);
@@ -45,47 +42,58 @@ const Dashboard = () => {
     }
   };
 
-  // Handle search input from SurgerySearch component
   const handleSearch = (term) => {
     setSearchTerm(term);
   };
-
+  const handleLogout = () => {
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    localStorage.removeItem(isLoggedIn);
+    navigate("/login");
+  };
   return (
-    <div className={styles.dashboardContainer}>
-      <h1 className={styles.header}>Surgeries</h1>
-      <div className={styles.filter}>
-        <SurgerySearch searchTerm={searchTerm} handleSearch={handleSearch} />
-        <select>
-          <option value="asc">Sort by Price low to High:</option>
-          <option value="desc">Sort by Price High to Low:</option>
-        </select>
-        <button
-          onClick={handleAddClick}
-          className={`btn btn-primary ${styles.customBtn}`}
-        >
-          Add Surgery
+    <>
+      {" "}
+      <div className={styles.logout}>
+        <button className="btn btn-primary" onClick={handleLogout}>
+          logout
         </button>
       </div>
-      {surgeryList.length === 0 ? (
-        <p style={{ color: "red", marginTop: "20px" }}>
-          No surgeries added yet.
-        </p>
-      ) : (
-        <>
-          {filteredSurgeries.length > 0 ? (
-            <SurgeryTable
-              surgeryList={filteredSurgeries}
-              onEdit={handleEdit}
-              onDelete={handleDelete}
-            />
-          ) : (
-            <p style={{ color: "red", marginTop: "20px" }}>
-              No surgeries found for "{searchTerm}"
-            </p>
-          )}
-        </>
-      )}
-    </div>
+      <div className={styles.dashboardContainer}>
+        <h1 className={styles.header}>Surgeries</h1>
+        <div className={styles.filter}>
+          <SurgerySearch searchTerm={searchTerm} handleSearch={handleSearch} />
+          <select>
+            <option value="asc">Sort by Price low to High:</option>
+            <option value="desc">Sort by Price High to Low:</option>
+          </select>
+          <button
+            onClick={handleAddClick}
+            className={`btn btn-primary ${styles.customBtn}`}
+          >
+            Add Surgery
+          </button>
+        </div>
+        {surgeryList.length === 0 ? (
+          <p style={{ color: "red", marginTop: "20px" }}>
+            No surgeries added yet.
+          </p>
+        ) : (
+          <>
+            {filteredSurgeries.length > 0 ? (
+              <SurgeryTable
+                surgeryList={filteredSurgeries}
+                onEdit={handleEdit}
+                onDelete={handleDelete}
+              />
+            ) : (
+              <p style={{ color: "red", marginTop: "20px" }}>
+                No surgeries found for "{searchTerm}"
+              </p>
+            )}
+          </>
+        )}
+      </div>
+    </>
   );
 };
 

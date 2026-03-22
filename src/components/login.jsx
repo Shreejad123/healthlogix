@@ -16,14 +16,12 @@ function LoginForm() {
   const validateForm = () => {
     const newErrors = {};
 
-    // Email validation (simple regex)
     if (!email) {
       newErrors.email = "Email is required";
     } else if (!/\S+@\S+\.\S+/.test(email)) {
       newErrors.email = "Email is invalid";
     }
 
-    // Password validation
     if (!password) {
       newErrors.password = "Password is required";
     } else if (password.length < 6) {
@@ -46,16 +44,14 @@ function LoginForm() {
 
       if (storedUser.email === email && storedUser.password === password) {
         localStorage.setItem("isLoggedIn", "true");
-        alert("Login successful!");
+
         toast.success("logging in!", { autoClose: 1000 });
+        navigate("/dashboard");
         console.log("Logging in with:", { email, password });
       } else {
         toast.error("Invalid email or password", { autoClose: 1000 });
       }
     }
-    // setTimeout(() => {
-    //   navigate("/dashboard");
-    // }, 1500);
   };
   return (
     <div>

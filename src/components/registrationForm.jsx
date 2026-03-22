@@ -131,7 +131,7 @@ const Registration = () => {
       localStorage.setItem("user", JSON.stringify(user));
 
       alert("Signup successful!");
-      navigate("/login");
+      navigate("/dashboard");
       Swal.fire("Registration successful!", "success");
       console.log("Email", email, "password", password);
       // reset fields
