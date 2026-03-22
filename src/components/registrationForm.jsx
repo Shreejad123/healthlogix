@@ -127,14 +127,13 @@ const Registration = () => {
 
       const user = { email, password };
 
-      // Save user in localStorage
       localStorage.setItem("user", JSON.stringify(user));
 
       alert("Signup successful!");
       navigate("/dashboard");
       Swal.fire("Registration successful!", "success");
       console.log("Email", email, "password", password);
-      // reset fields
+
       setFirstName("");
       setLastName("");
       setContactNumber("");
@@ -145,13 +144,12 @@ const Registration = () => {
   };
 
   return (
-    <div className="container mt-3">
-      <form onSubmit={handleSubmit}>
-        <div className={styles.containerRegistration}>
-          <div className="row jumbotron box8">
-            <h2 className={styles.header}>Register</h2>
-
-            <div className={`col-sm-5 form-group ${styles.divinput}`}>
+    <div>
+      <form onSubmit={handleSubmit} className={styles.form}>
+        <div className={styles.user_details}>
+          <h2 className={styles.header}>Register</h2>
+          <div className={styles.user_form}>
+            <div className={styles.input}>
               <label htmlFor="firstNameInput">First Name</label>
               <input
                 type="text"
@@ -168,7 +166,7 @@ const Registration = () => {
                 <p className={styles.errorMessage}>{firstNameError}</p>
               )}
             </div>
-            <div className="col-sm-6 form-group">
+            <div className={styles.input}>
               <label htmlFor="lastNameInput">Last Name</label>
               <input
                 type="text"
@@ -183,7 +181,7 @@ const Registration = () => {
               />
               {lastNameError && <p className={styles.errorMessage}></p>}
             </div>
-            <div className={`col-sm-5 form-group ${styles.divinput}`}>
+            <div className={styles.input}>
               <label htmlFor="Email">Email</label>
               <input
                 type="email"
@@ -200,7 +198,7 @@ const Registration = () => {
                 <p className={styles.errorMessage}>{emailError}</p>
               )}
             </div>
-            <div className="col-sm-6 form-group">
+            <div className={styles.input}>
               <label htmlFor="contactInput">Contact Number</label>
               <input
                 type="text"
@@ -217,7 +215,7 @@ const Registration = () => {
                 <p className={styles.errorMessage}>{contactError}</p>
               )}
             </div>
-            <div className={`col-sm-5 form-group ${styles.divinput}`}>
+            <div className={styles.input}>
               <label htmlFor="passwordInput">Password</label>
               <input
                 type="password"
@@ -234,7 +232,7 @@ const Registration = () => {
                 <p className={styles.errorMessage}>{passwordError}</p>
               )}
             </div>
-            <div className="col-sm-6 form-group">
+            <div className={styles.input}>
               <label htmlFor="confirmPasswordInput">Confirm Password</label>
               <input
                 type="password"
@@ -251,15 +249,17 @@ const Registration = () => {
                 <p className={styles.errorMessage}>{confirmPasswordError}</p>
               )}
             </div>
+          </div>
+          <div className={styles.button}>
             <button
               type="submit"
               className={`btn btn-primary ${styles.submitBtn}`}
             >
               Submit
             </button>
-            <div className={styles.link}>
-              Already have an account ? <a href="/login">Login</a>
-            </div>
+          </div>
+          <div className={styles.link}>
+            Already have an account ? <a href="/login">Login</a>
           </div>
         </div>
       </form>
