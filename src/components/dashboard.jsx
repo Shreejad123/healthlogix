@@ -1,10 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import SurgeryTable from "./surgeryTable";
+import { lazy, Suspense } from "react";
 import SurgerySearch from "./searchBar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./dashboard.module.css";
-
+const SurgeryTable = lazy(() => import("./surgeryTable"));
 const Dashboard = () => {
   const navigate = useNavigate();
   const [surgeryList, setSurgeryList] = useState([]);
@@ -73,25 +73,27 @@ const Dashboard = () => {
             Add Surgery
           </button>
         </div>
-        {surgeryList.length === 0 ? (
-          <p style={{ color: "red", marginTop: "20px" }}>
-            No surgeries added yet.
-          </p>
-        ) : (
-          <>
-            {filteredSurgeries.length > 0 ? (
-              <SurgeryTable
-                surgeryList={filteredSurgeries}
-                onEdit={handleEdit}
-                onDelete={handleDelete}
-              />
-            ) : (
-              <p style={{ color: "red", marginTop: "20px" }}>
-                No surgeries found for "{searchTerm}"
-              </p>
-            )}
-          </>
-        )}
+        <Suspense fallback={<div>Loading...</div>}>
+          {surgeryList.length === 0 ? (
+            <p style={{ color: "red", marginTop: "20px" }}>
+              No surgeries added yet.
+            </p>
+          ) : (
+            <>
+              {filteredSurgeries.length > 0 ? (
+                <SurgeryTable
+                  surgeryList={filteredSurgeries}
+                  onEdit={handleEdit}
+                  onDelete={handleDelete}
+                />
+              ) : (
+                <p style={{ color: "red", marginTop: "20px" }}>
+                  No surgeries found for "{searchTerm}"
+                </p>
+              )}
+            </>
+          )}
+        </Suspense>
       </div>
     </>
   );

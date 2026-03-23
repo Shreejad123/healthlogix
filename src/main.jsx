@@ -8,7 +8,8 @@ import LoginForm from "./components/login";
 import ForgotPassword from "./components/forgotPassword";
 import LandingPage from "./components/landingPage";
 const AddSurgery = lazy(() => import("./components/addSurgeries"));
-import Dashboard from "./components/dashboard";
+const Dashboard = lazy(() => import("./components/dashboard"));
+//import Dashboard from "./components/dashboard";
 import SurgeryTable from "./components/surgeryTable";
 import EditSurgery from "./components/editSurgeries";
 import PatientDetails from "./components/patientDetails";
@@ -34,7 +35,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           path="/dashboard"
           element={
             <PrivateRoute>
-              <Dashboard />
+              <Suspense fallback={<h2>Loading Surgery table...</h2>}>
+                <Dashboard />
+              </Suspense>
             </PrivateRoute>
           }
         />

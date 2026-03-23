@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./registrationForm.module.css";
 import Swal from "sweetalert2";
+import loginImage from "../assets/doctor.jpg";
 
 const Registration = () => {
   const navigate = useNavigate();
