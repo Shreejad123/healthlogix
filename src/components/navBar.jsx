@@ -12,8 +12,7 @@ function NavBar() {
   return (
     <>
       <div className={styles.header}>
-        <div onClick={handleClick}></div>
-        <ul>
+        <div onClick={handleClick} className={styles.NavBar}>
           <img
             src={loginImage}
             alt="Background"
@@ -22,26 +21,27 @@ function NavBar() {
             onClick={() => navigate("/")}
             className={styles.image}
           />
+          <ul>
+            <li onClick={closeMobileMenu}>
+              <span onClick={() => navigate("/")}> Home</span>
+            </li>
+            <li onClick={closeMobileMenu}>
+              <span onClick={() => navigate("/login")}>Login</span>
+            </li>
 
-          <li onClick={closeMobileMenu}>
-            <span onClick={() => navigate("/")}> Home</span>
-          </li>
-          <li onClick={closeMobileMenu}>
-            <span onClick={() => navigate("/login")}>Login</span>
-          </li>
-
-          <li onClick={closeMobileMenu}>
-            <span>Add Patient</span>
-          </li>
-          <li onClick={closeMobileMenu}>
-            <button
-              className="btn btn-danger"
-              onClick={() => navigate("/registration")}
-            >
-              Sign up
-            </button>
-          </li>
-        </ul>
+            <li onClick={closeMobileMenu}>
+              <span>Add Patient</span>
+            </li>
+            <li onClick={closeMobileMenu}>
+              <button
+                className={`btn btn-danger ${styles.signupBtn}`}
+                onClick={() => navigate("/registration")}
+              >
+                Sign up
+              </button>
+            </li>
+          </ul>
+        </div>
       </div>
     </>
   );

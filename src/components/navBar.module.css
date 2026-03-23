@@ -1,36 +1,35 @@
-ul {
-  list-style-type: none;
-
-  padding: 0;
+.NavBar {
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
-span {
-  font-weight: 600;
-  font-size: 18px;
+
+ul {
+  list-style: none;
+  display: flex;
+
+  gap: 100px;
+  padding: 20;
+  margin: 0;
 }
-.image {
-  margin-left: 40px;
-}
+
 ul li {
   color: black;
-  padding: 14px 16px;
+  padding: 8px 10px;
   text-decoration: none;
-  gap: 10px;
-  margin: 1%;
-  margin-left: 10%;
+  cursor: pointer;
 }
 
-ul li a:hover {
-  background-color: #111111;
+ul li span {
+  font-weight: 600;
+  font-size: 16px;
+}
+.signupBtn {
+  padding: 8px 10px;
+  width: 7.5rem;
+  border-radius: 10px;
 }
 
-.header {
-  width: 80rem;
-  position: relative;
-}
-.navOptions li {
-  display: flex;
-}
 @media (max-width: 700px) {
   .header {
     padding: 0px 10px;

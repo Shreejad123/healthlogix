@@ -15,12 +15,11 @@ function LandingPage() {
               Streamline Your Surgery <br></br>Management
             </h2>
             <p className={styles.paragraph}>
-              Simplify scheduling and managing surgeries with <br></br>our
-              all-in-one solution for hospitals. From patient records to surgery
-              scheduling — everything in one place, fast and secure. Easily book
-              and manage surgery appointments with an intuitive interface. Keep
-              track of patient information, medical history, and surgery
-              details.
+              Simplify scheduling and managing surgeries with our all-in-one
+              solution for hospitals. From patient records to surgery scheduling
+              — everything in one place, fast and secure. Easily book and manage
+              surgery appointments with an intuitive interface. Keep track of
+              patient information,surgery details.
             </p>
             <button className="btn btn-info" onClick={() => navigate("/login")}>
               Get Started
@@ -28,7 +27,6 @@ function LandingPage() {
           </div>
           <img src={loginImage} alt="Background" className={styles.image} />
         </div>
-        <div className={styles.container}></div>
       </div>
     </>
   );
