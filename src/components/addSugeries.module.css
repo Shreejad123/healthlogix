@@ -1,39 +1,93 @@
-.saveBtn {
-  background: #2b7cff;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  width: 100%;
-}
-
-.form {
-  margin: 20px;
-}
-.formCard {
-  background: #ffffff;
-  padding: 10%;
-  border-radius: 10px;
-
+.addSurgery {
+  min-height: 100vh;
   display: flex;
-  margin-bottom: 15px;
-  min-width: 500px;
-  width: 100%;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
 }
+
+.formCard {
+  width: 100%;
+  max-width: 800px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 30px 35px;
+}
+
+.formRow h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.addSurgeryContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
 .formGroup {
-  padding: 10px;
-  border-radius: 6px;
-  font-size: 14px;
+  display: flex;
+  flex-direction: column;
 }
-.formGroup input {
-  margin-left: 20px;
-  width: 100%;
-  margin-bottom: 5%;
-  padding: 2%;
-}
+
 .formGroup label {
-  margin-left: 17px;
-  margin-bottom: 5px;
-  color: darkblue;
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #374151;
   font-weight: 500;
+}
+
+.formGroup input {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.formGroup input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.formGroup:last-child {
+  grid-column: span 2;
+}
+
+.formGroup p {
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.saveBtn {
+  width: 100%;
+  margin-top: 25px;
+  padding: 12px;
+  border-radius: 10px !important;
+  font-size: 16px;
+  font-weight: 500;
+
+  border: none !important;
+  transition: all 0.3s ease;
+}
+
+.saveBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+@media (max-width: 768px) {
+  .addSurgeryContainer {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .formGroup:last-child {
+    grid-column: span 1;
+  }
 }

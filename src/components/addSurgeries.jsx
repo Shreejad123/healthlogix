@@ -93,71 +93,74 @@ const Addsurgery = () => {
         <div className={styles.formRow}>
           <h2 className="text-center">Add Surgery</h2>
 
-          <div className={styles.formGroup}>
-            <label>Patient Full Name:</label>
-            <input
-              type="text"
-              placeholder="Enter your Full Name"
-              value={patientFullName}
-              onChange={(e) => setPatientFullName(e.target.value)}
-            />
-            {errors.patientFullName && (
-              <p style={{ color: "red" }}>{errors.patientFullName}</p>
-            )}
-          </div>
+          <div className={styles.addSurgeryContainer}>
+            <div className={styles.formGroup}>
+              <label>Patient Full Name:</label>
+              <input
+                type="text"
+                placeholder="Enter your Full Name"
+                value={patientFullName}
+                onChange={(e) => setPatientFullName(e.target.value)}
+              />
+              {errors.patientFullName && (
+                <p style={{ color: "red" }}>{errors.patientFullName}</p>
+              )}
+            </div>
+            <div className={styles.formGroup}>
+              <label className={styles.label}>Patient Number:</label>
+              <input
+                type="text"
+                placeholder="Enter Patient Number"
+                value={patientNumber}
+                onChange={(e) => setPatientNumber(e.target.value)}
+              />
+              {errors.patientNumber && (
+                <p style={{ color: "red" }}>{errors.patientNumber}</p>
+              )}
+            </div>
 
-          <div className={styles.formGroup}>
-            <label className={styles.label}>Patient Number:</label>
-            <input
-              type="text"
-              placeholder="Enter Patient Number"
-              value={patientNumber}
-              onChange={(e) => setPatientNumber(e.target.value)}
-            />
-            {errors.patientNumber && (
-              <p style={{ color: "red" }}>{errors.patientNumber}</p>
-            )}
-          </div>
+            <div className={styles.formGroup}>
+              <label>Phone Number:</label>
+              <input
+                type="text"
+                placeholder="Enter your Phone number"
+                value={phoneNumber}
+                onChange={(e) => setPhoneNumber(e.target.value)}
+              />
+              {errors.phoneNumber && (
+                <p style={{ color: "red" }}>{errors.phoneNumber}</p>
+              )}
+            </div>
+            <div className={styles.formGroup}>
+              <label>Type of Surgeries:</label>
+              <input
+                type="text"
+                placeholder="Enter Surgeries"
+                value={surgery}
+                onChange={(e) => setSurgery(e.target.value)}
+              />
+              {errors.surgery && (
+                <p style={{ color: "red" }}>{errors.surgery}</p>
+              )}
+            </div>
+            <div className={styles.formGroup}>
+              <label>Surgery Date:</label>
+              <input
+                placeholder="Enter your Surgery Date"
+                type="date"
+                value={surgeryDate}
+                onChange={(e) => setSurgeryDate(e.target.value)}
+              />
 
-          <div className={styles.formGroup}>
-            <label>Phone Number:</label>
-            <input
-              type="text"
-              placeholder="Enter your Phone number"
-              value={phoneNumber}
-              onChange={(e) => setPhoneNumber(e.target.value)}
-            />
-            {errors.phoneNumber && (
-              <p style={{ color: "red" }}>{errors.phoneNumber}</p>
-            )}
+              {errors.surgeryDate && (
+                <p style={{ color: "red" }}>{errors.surgeryDate}</p>
+              )}
+            </div>
           </div>
-          <div className={styles.formGroup}>
-            <label>Type of Surgeries:</label>
-            <input
-              type="text"
-              placeholder="Enter Surgeries"
-              value={surgery}
-              onChange={(e) => setSurgery(e.target.value)}
-            />
-            {errors.surgery && <p style={{ color: "red" }}>{errors.surgery}</p>}
-          </div>
-          <div className={styles.formGroup}>
-            <label>Surgery Date:</label>
-            <input
-              placeholder="Enter your Surgery Date"
-              type="date"
-              value={surgeryDate}
-              onChange={(e) => setSurgeryDate(e.target.value)}
-            />
-
-            {errors.surgeryDate && (
-              <p style={{ color: "red" }}>{errors.surgeryDate}</p>
-            )}
-          </div>
-          <button className={`btn btn-primary ${styles.saveBtn}`} type="submit">
-            Save
-          </button>
         </div>
+        <button className={`btn btn-primary ${styles.saveBtn}`} type="submit">
+          Save
+        </button>
       </form>
     </div>
   );
