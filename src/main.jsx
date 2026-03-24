@@ -9,6 +9,7 @@ import ForgotPassword from "./components/forgotPassword";
 import LandingPage from "./components/landingPage";
 const AddSurgery = lazy(() => import("./components/addSurgeries"));
 const Dashboard = lazy(() => import("./components/dashboard"));
+
 //import Dashboard from "./components/dashboard";
 import SurgeryTable from "./components/surgeryTable";
 import EditSurgery from "./components/editSurgeries";
@@ -23,6 +24,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           path="/add-surgery"
           element={
             <Suspense fallback={<h2>Loading Add Surgery...</h2>}>
+              {" "}
               <AddSurgery />
             </Suspense>
           }

@@ -4,6 +4,7 @@ import { lazy, Suspense } from "react";
 import SurgerySearch from "./searchBar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./dashboard.module.css";
+import { ClipLoader } from "react-spinners";
 const SurgeryTable = lazy(() => import("./surgeryTable"));
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -73,7 +74,14 @@ const Dashboard = () => {
             Add Surgery
           </button>
         </div>
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense
+          fallback={
+            <div>
+              {" "}
+              <ClipLoader />
+            </div>
+          }
+        >
           {surgeryList.length === 0 ? (
             <p style={{ color: "red", marginTop: "20px" }}>
               No surgeries added yet.
