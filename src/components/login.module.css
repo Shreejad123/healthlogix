@@ -24,9 +24,6 @@ body {
   box-shadow: 0 12px 48px 0 rgba(31, 38, 135, 0.5);
 }
 .branding {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-right: 0%;
   flex: 1;
 }
 .loginContainer h2 {

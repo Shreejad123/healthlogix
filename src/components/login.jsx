@@ -60,8 +60,8 @@ function LoginForm() {
           <h4 className={styles.loginHeader}>Hospital Management System</h4>
           <img src={loginImage} alt="Background" className={styles.image} />
         </div>
-        <div className={styles.auth}>
-          <form className={styles.loginForm} onSubmit={handleSubmit}>
+        <form className={styles.loginForm} onSubmit={handleSubmit}>
+          <div className={styles.auth}>
             <h4 className={styles.header}>Login</h4>
             <div>
               <div className={styles.email}>
@@ -102,8 +102,8 @@ function LoginForm() {
             <p className={styles.signup}>
               Don't have an account? <Link to="/registration">Sign up</Link>
             </p>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
       <ToastContainer />
     </div>

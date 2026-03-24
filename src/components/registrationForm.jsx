@@ -3,8 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./registrationForm.module.css";
 import Swal from "sweetalert2";
-import loginImage from "../assets/doctor.jpg";
-
+import loginImage from "../assets/doctor.png";
 const Registration = () => {
   const navigate = useNavigate();
 
@@ -145,9 +144,11 @@ const Registration = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit} className={styles.form}>
-        <div className={styles.user_details}>
-          <h2 className={styles.header}>Register</h2>
+      <div className={styles.user_details}>
+        <h2 className={styles.header}>Register</h2>
+        <img src={loginImage} alt="Background" className={styles.image} />
+        <div className={styles.branding}></div>
+        <form onSubmit={handleSubmit} className={styles.form}>
           <div className={styles.user_form}>
             <div className={styles.input}>
               <label htmlFor="firstNameInput">First Name</label>
@@ -250,19 +251,19 @@ const Registration = () => {
               )}
             </div>
           </div>
-          <div className={styles.button}>
-            <button
-              type="submit"
-              className={`btn btn-primary ${styles.submitBtn}`}
-            >
-              Submit
-            </button>
-          </div>
-          <div className={styles.link}>
-            Already have an account ? <a href="/login">Login</a>
-          </div>
+        </form>
+        <div className={styles.button}>
+          <button
+            type="submit"
+            className={`btn btn-primary ${styles.submitBtn}`}
+          >
+            Submit
+          </button>
         </div>
-      </form>
+        <div className={styles.link}>
+          Already have an account ? <a href="/login">Login</a>
+        </div>
+      </div>
     </div>
   );
 };
