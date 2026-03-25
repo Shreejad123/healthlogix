@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./registrationForm.module.css";
 import Swal from "sweetalert2";
-import loginImage from "../assets/doctor.png";
+import loginImage from "../assets/doctorRegister.jpg";
 const Registration = () => {
   const navigate = useNavigate();
 
@@ -145,9 +145,9 @@ const Registration = () => {
   return (
     <div>
       <div className={styles.user_details}>
+        <div className={styles.branding}></div>
         <h2 className={styles.header}>Register</h2>
         <img src={loginImage} alt="Background" className={styles.image} />
-        <div className={styles.branding}></div>
         <form onSubmit={handleSubmit} className={styles.form}>
           <div className={styles.user_form}>
             <div className={styles.input}>
@@ -252,6 +252,10 @@ const Registration = () => {
             </div>
           </div>
         </form>
+
+        <div className={styles.link}>
+          Already have an account ? <a href="/login">Login</a>
+        </div>
         <div className={styles.button}>
           <button
             type="submit"
@@ -259,9 +263,6 @@ const Registration = () => {
           >
             Submit
           </button>
-        </div>
-        <div className={styles.link}>
-          Already have an account ? <a href="/login">Login</a>
         </div>
       </div>
     </div>
