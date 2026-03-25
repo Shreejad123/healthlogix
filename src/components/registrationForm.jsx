@@ -157,7 +157,7 @@ const Registration = () => {
                 id="firstNameInput"
                 value={firstName}
                 placeholder="Enter your First Name"
-                className="form-control"
+                className={`form-control ${styles.inputs}`}
                 onChange={(e) => {
                   setFirstName(e.target.value);
                   validateFirstName(e.target.value);
@@ -173,7 +173,7 @@ const Registration = () => {
                 type="text"
                 id="lastNameInput"
                 value={lastName}
-                className="form-control"
+                className={`form-control ${styles.inputs}`}
                 placeholder="Enter your Last Name"
                 onChange={(e) => {
                   setLastName(e.target.value);
@@ -186,7 +186,7 @@ const Registration = () => {
               <label htmlFor="Email">Email</label>
               <input
                 type="email"
-                className="form-control"
+                className={`form-control ${styles.inputs}`}
                 id="email"
                 placeholder="Enter your email"
                 value={email}
@@ -203,7 +203,7 @@ const Registration = () => {
               <label htmlFor="contactInput">Contact Number</label>
               <input
                 type="text"
-                className="form-control"
+                className={`form-control ${styles.inputs}`}
                 id="contactInput"
                 placeholder="Enter your Contact Number"
                 value={contactNumber}
@@ -220,7 +220,7 @@ const Registration = () => {
               <label htmlFor="passwordInput">Password</label>
               <input
                 type="password"
-                className="form-control"
+                className={`form-control ${styles.inputs}`}
                 id="passwordInput"
                 value={password}
                 placeholder="Enter your Password"
@@ -237,7 +237,7 @@ const Registration = () => {
               <label htmlFor="confirmPasswordInput">Confirm Password</label>
               <input
                 type="password"
-                className="form-control"
+                className={`form-control ${styles.inputs}`}
                 id="confirmPasswordInput"
                 value={confirmPassword}
                 placeholder="Re-Enter Password"
@@ -251,19 +251,18 @@ const Registration = () => {
               )}
             </div>
           </div>
+          <div className={styles.link}>
+            Already have an account ? &nbsp;<a href="/login">Login</a>
+          </div>
+          <div className={styles.button}>
+            <button
+              type="submit"
+              className={`btn btn-primary ${styles.submitBtn}`}
+            >
+              Submit
+            </button>
+          </div>
         </form>
-
-        <div className={styles.link}>
-          Already have an account ? <a href="/login">Login</a>
-        </div>
-        <div className={styles.button}>
-          <button
-            type="submit"
-            className={`btn btn-primary ${styles.submitBtn}`}
-          >
-            Submit
-          </button>
-        </div>
       </div>
     </div>
   );

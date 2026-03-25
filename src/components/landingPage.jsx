@@ -2,7 +2,7 @@ import loginImage from "../assets/doctor.jpg";
 import NavBar from "./navBar";
 import styles from "./landingPage.module.css";
 import { useNavigate } from "react-router-dom";
-
+import Footer from "./footer";
 function LandingPage() {
   const navigate = useNavigate();
   return (
@@ -27,6 +27,7 @@ function LandingPage() {
           </div>
           <img src={loginImage} alt="Background" className={styles.image} />
         </div>
+        <Footer />
       </div>
     </>
   );

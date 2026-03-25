@@ -5,6 +5,7 @@ import SurgerySearch from "./searchBar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./dashboard.module.css";
 import { ClipLoader } from "react-spinners";
+
 const SurgeryTable = lazy(() => import("./surgeryTable"));
 const Dashboard = () => {
   const navigate = useNavigate();

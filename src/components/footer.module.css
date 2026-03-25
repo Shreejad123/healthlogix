@@ -1,0 +1,50 @@
+article {
+  min-height: 100%;
+  background-color: lightblue;
+  list-style-type: none;
+  margin-top: 5%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+.paragraph {
+  margin: 3%;
+}
+.footer {
+  background-color: lightblue;
+  display: flex;
+  padding: 5px;
+  width: 100%;
+}
+.hospital {
+  display: flex;
+  justify-content: center;
+  margin: 1%;
+}
+.links {
+  list-style-type: none;
+}
+.links li {
+  margin-top: 15px;
+  margin-left: 200px;
+}
+.Header {
+  cursor: pointer;
+}
+.links:hover {
+  cursor: pointer;
+}
+@media only screen and (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .links {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .links li {
+    margin-left: 0; /* Remove large left spacing on mobile */
+  }
+}
