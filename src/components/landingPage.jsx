@@ -2,7 +2,7 @@ import loginImage from "../assets/doctor.jpg";
 import NavBar from "./navBar";
 import styles from "./landingPage.module.css";
 import { useNavigate } from "react-router-dom";
-import Footer from "./footer";
+import Footer from "./Footer";
 function LandingPage() {
   const navigate = useNavigate();
   return (
