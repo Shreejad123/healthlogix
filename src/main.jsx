@@ -8,10 +8,8 @@ import LoginForm from "./components/login";
 import ForgotPassword from "./components/forgotPassword";
 import LandingPage from "./components/landingPage";
 const AddSurgery = lazy(() => import("./components/addSurgeries"));
-const Dashboard = lazy(() => import("./components/dashboard"));
-
-//import Dashboard from "./components/dashboard";
-import SurgeryTable from "./components/surgeryTable";
+const SugeryTable = lazy(() => import("./components/surgeryTable"));
+import Dashboard from "./components/dashboard";
 import EditSurgery from "./components/editSurgeries";
 import PatientDetails from "./components/patientDetails";
 import PrivateRoute from "./components/privateRoute";
@@ -30,21 +28,20 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           }
         />
         <Route path="/login" element={<LoginForm />} />
-
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/registration" element={<Registration />} />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
         <Route
-          path="/dashboard"
+          path="/SugeryTable"
           element={
             <PrivateRoute>
               <Suspense fallback={<h2>Loading Surgery table...</h2>}>
-                <Dashboard />
+                <SugeryTable />
               </Suspense>
             </PrivateRoute>
           }
         />
         <Route path="/" element={<LandingPage />} />
-        <Route path="/SurgeryTable" element={<SurgeryTable />} />
         <Route path="/edit-surgery/:index" element={<EditSurgery />} />
         <Route path="/patient/:index" element={<PatientDetails />} />
       </Routes>

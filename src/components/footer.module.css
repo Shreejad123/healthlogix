@@ -15,8 +15,7 @@ article {
   width: 100%;
 }
 .hospital {
-  display: flex;
-  justify-content: center;
+  text-align: right;
   margin: 1%;
 }
 .links {

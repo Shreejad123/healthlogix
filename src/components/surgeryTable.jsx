@@ -1,126 +1,110 @@
-import { useState } from "react";
-import { FaEdit } from "react-icons/fa";
-import { MdDelete } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { lazy, Suspense } from "react";
+import SurgerySearch from "./searchBar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./surgeryTable.module.css";
+import { ClipLoader } from "react-spinners";
 
-const SurgeryTable = ({ surgeryList = [], onEdit, onDelete }) => {
+const Table = lazy(() => import("./Table"));
+const SurgeryTable = () => {
   const navigate = useNavigate();
+  const [surgeryList, setSurgeryList] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 5;
+  useEffect(() => {
+    const savedData = localStorage.getItem("surgeryList");
+    if (savedData) {
+      setSurgeryList(JSON.parse(savedData));
+    }
+  }, []);
 
-  const totalPages = Math.ceil(surgeryList.length / itemsPerPage);
+  const filteredSurgeries =
+    searchTerm.trim() === ""
+      ? surgeryList
+      : surgeryList.filter((surgery) =>
+          surgery.patientFullName
+            .toLowerCase()
+            .includes(searchTerm.toLowerCase()),
+        );
 
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const currentData = surgeryList.slice(startIndex, startIndex + itemsPerPage);
-
-  const handleNextPage = () => {
-    if (currentPage < totalPages) setCurrentPage((prev) => prev + 1);
+  const handleAddClick = () => {
+    navigate("/add-surgery");
   };
 
-  const handlePrevPage = () => {
-    if (currentPage > 1) setCurrentPage((prev) => prev - 1);
+  const handleEdit = (index) => {
+    navigate(`/edit-surgery/${index}`);
   };
 
-  const formatDate = (dateString) => {
-    if (!dateString) return "";
-    if (dateString.includes("/")) return dateString;
-    const [year, month, day] = dateString.split("-");
-    return `${day}/${month}/${year}`;
+  const handleDelete = (index) => {
+    if (window.confirm("Are you sure you want to delete this record?")) {
+      const updatedList = surgeryList.filter((_, i) => i !== index);
+      setSurgeryList(updatedList);
+      localStorage.setItem("surgeryList", JSON.stringify(updatedList));
+    }
   };
 
-  const handleRowClick = (index) => {
-    navigate(`/patient/${index}`);
+  const handleSearch = (term) => {
+    setSearchTerm(term);
   };
-
+  const handleLogout = () => {
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    localStorage.removeItem(isLoggedIn);
+    navigate("/login");
+  };
   return (
-    <div>
-      <table>
-        <thead className={styles.patientTable}>
-          <tr>
-            <th>Patient Name</th>
-            <th>Patient No.</th>
-            <th>Phone</th>
-            <th>Surgery Date</th>
-            <th>Type Of Surgery</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {currentData.length > 0 ? (
-            currentData.map((surgery, index) => (
-              <tr
-                key={startIndex + index}
-                onClick={() => handleRowClick(startIndex + index)}
-              >
-                <td>{surgery.patientFullName}</td>
-                <td>{surgery.patientNumber}</td>
-                <td>{surgery.phoneNumber}</td>
-                <td>{formatDate(surgery.surgeryDate)}</td>
-                <td>{surgery.surgery}</td>
-                <td>
-                  <button
-                    type="button"
-                    className="btn btn-info"
-                    style={{ cursor: "pointer", marginRight: "10px" }}
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      onEdit(startIndex + index);
-                    }}
-                  >
-                    Edit &nbsp;
-                    <FaEdit />
-                  </button>
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      onDelete(startIndex + index);
-                    }}
-                    type="button"
-                    className="btn btn-danger"
-                  >
-                    Delete &nbsp;
-                    <MdDelete />
-                  </button>
-                </td>
-              </tr>
-            ))
-          ) : (
-            <tr>
-              <td colSpan="8" style={{ textAlign: "center", color: "red" }}>
-                No surgeries found
-              </td>
-            </tr>
-          )}
-        </tbody>
-      </table>
-
-      {totalPages > 1 && (
-        <div style={{ marginTop: "15px" }}>
+    <>
+      {" "}
+      <div className={styles.logout}>
+        <button className="btn btn-primary" onClick={handleLogout}>
+          logout
+        </button>
+      </div>
+      <div className={styles.dashboardContainer}>
+        <h1 className={styles.header}>Surgeries</h1>
+        <div className={styles.filter}>
+          <SurgerySearch searchTerm={searchTerm} handleSearch={handleSearch} />
+          <select>
+            <option value="asc">Sort by Price low to High:</option>
+            <option value="desc">Sort by Price High to Low:</option>
+          </select>
           <button
-            className="btn
-            btn-secondary"
-            onClick={handlePrevPage}
-            disabled={currentPage === 1}
+            onClick={handleAddClick}
+            className={`btn btn-primary ${styles.customBtn}`}
           >
-            Previous
-          </button>
-          <span style={{ margin: "0 10px" }}>
-            Page {currentPage} of {totalPages}
-          </span>
-          <button
-            className="btn
-            btn-secondary"
-            onClick={handleNextPage}
-            disabled={currentPage === totalPages}
-          >
-            Next
+            Add Surgery
           </button>
         </div>
-      )}
-    </div>
+        <Suspense
+          fallback={
+            <div>
+              {" "}
+              <ClipLoader />
+            </div>
+          }
+        >
+          {surgeryList.length === 0 ? (
+            <p style={{ color: "red", marginTop: "20px" }}>
+              No surgeries added yet.
+            </p>
+          ) : (
+            <>
+              {filteredSurgeries.length > 0 ? (
+                <Table
+                  surgeryList={filteredSurgeries}
+                  onEdit={handleEdit}
+                  onDelete={handleDelete}
+                />
+              ) : (
+                <p style={{ color: "red", marginTop: "20px" }}>
+                  No surgeries found for "{searchTerm}"
+                </p>
+              )}
+            </>
+          )}
+        </Suspense>
+      </div>
+    </>
   );
 };
 
