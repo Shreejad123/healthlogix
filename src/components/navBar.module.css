@@ -1,21 +1,27 @@
 .NavBar {
   display: flex;
-  justify-content: center;
+  background-color: #4682b4;
+  width: 79rem;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+.header {
+  display: flex;
   align-items: center;
 }
-
 ul {
   list-style: none;
   display: flex;
-
-  gap: 100px;
-  padding: 20;
-  margin: 0;
+  margin-left: auto;
+  gap: 40px;
 }
 
 ul li {
   color: black;
-  padding: 8px 10px;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 5px 10px;
   text-decoration: none;
   cursor: pointer;
 }
@@ -23,11 +29,6 @@ ul li {
 ul li span {
   font-weight: 600;
   font-size: 16px;
-}
-.signupBtn {
-  padding: 8px 10px;
-  width: 7.5rem;
-  border-radius: 10px;
 }
 
 @media (max-width: 700px) {

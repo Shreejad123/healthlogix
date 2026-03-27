@@ -1,6 +1,6 @@
 import styles from "./navBar.module.css";
 import { useNavigate } from "react-router-dom";
-import loginImage from "../assets/hospitalLogo.png";
+import { IoPersonSharp } from "react-icons/io5";
 
 import { useState } from "react";
 
@@ -11,38 +11,29 @@ function NavBar() {
   const closeMobileMenu = () => setClick(false);
   return (
     <>
-      <div className={styles.header}>
+      <nav className={styles.header}>
         <div onClick={handleClick} className={styles.NavBar}>
-          <img
-            src={loginImage}
-            alt="Background"
-            width={100}
-            height={100}
-            onClick={() => navigate("/")}
-            className={styles.image}
-          />
+          <h2 className={styles.header}>HealthLogix Dashboard</h2>
           <ul>
             <li onClick={closeMobileMenu}>
               <span onClick={() => navigate("/")}> Home</span>
             </li>
             <li onClick={closeMobileMenu}>
-              <span onClick={() => navigate("/login")}>Login</span>
+              <span onClick={() => navigate("/login")}>Patients</span>
             </li>
 
             <li onClick={closeMobileMenu}>
-              <span>Add Patient</span>
+              <span>Surgeries</span>
             </li>
             <li onClick={closeMobileMenu}>
-              <button
-                className={`btn btn-danger ${styles.signupBtn}`}
-                onClick={() => navigate("/registration")}
-              >
-                Sign up
-              </button>
+              <span>
+                {" "}
+                <IoPersonSharp size={20} />
+              </span>
             </li>
           </ul>
         </div>
-      </div>
+      </nav>
     </>
   );
 }
