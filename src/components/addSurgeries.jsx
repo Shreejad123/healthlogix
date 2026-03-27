@@ -133,12 +133,14 @@ const Addsurgery = () => {
             </div>
             <div className={styles.formGroup}>
               <label>Type of Surgeries:</label>
-              <input
-                type="text"
-                placeholder="Enter Surgeries"
-                value={surgery}
-                onChange={(e) => setSurgery(e.target.value)}
-              />
+              <select onChange={(e) => setSurgery(e.target.value)}>
+                <option value="" disabled="disabled" selected="selected">
+                  Select the Surgery
+                </option>
+                <option value="Cardiac">Cardiac</option>
+                <option value="Orthopedic">Orthopedic</option>
+                <option value="Neuro">Neuro</option>
+              </select>
               {errors.surgery && (
                 <p style={{ color: "red" }}>{errors.surgery}</p>
               )}

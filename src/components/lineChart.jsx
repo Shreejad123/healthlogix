@@ -1,6 +1,6 @@
 import { Chart } from "react-google-charts";
 import styles from "./dashboard.module.css";
-function Dashboard() {
+function LineChart() {
   const options = {
     title: "Weekly Surgeries",
     hAxis: { title: "Day" },
@@ -9,7 +9,7 @@ function Dashboard() {
   };
 
   const surgeries = JSON.parse(localStorage.getItem("surgeryList")) || [];
-
+  console.log("surgeries", surgeries);
   const getWeekRange = () => {
     const today = new Date();
     const day = today.getDay();
@@ -79,4 +79,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard;
+export default LineChart;
