@@ -4,6 +4,8 @@ import { MdDelete } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./surgeryTable.module.css";
+import { IoChevronForward } from "react-icons/io5";
+import { IoIosArrowBack } from "react-icons/io";
 
 const SurgeryTable = ({ surgeryList = [], onEdit, onDelete }) => {
   const navigate = useNavigate();
@@ -37,7 +39,7 @@ const SurgeryTable = ({ surgeryList = [], onEdit, onDelete }) => {
 
   return (
     <div>
-      <table>
+      <table className={styles.table}>
         <thead className={styles.patientTable}>
           <tr>
             <th>Patient Name</th>
@@ -100,23 +102,21 @@ const SurgeryTable = ({ surgeryList = [], onEdit, onDelete }) => {
       {totalPages > 1 && (
         <div style={{ marginTop: "15px" }}>
           <button
-            className="btn
-            btn-secondary"
+            className={`btn btn-secondary ${styles.Btn}`}
             onClick={handlePrevPage}
             disabled={currentPage === 1}
           >
-            Previous
+            <IoIosArrowBack /> Previous
           </button>
           <span style={{ margin: "0 10px" }}>
             Page {currentPage} of {totalPages}
           </span>
           <button
-            className="btn
-            btn-secondary"
+            className={`btn btn-secondary ${styles.Btn}`}
             onClick={handleNextPage}
             disabled={currentPage === totalPages}
           >
-            Next
+            Next <IoChevronForward />
           </button>
         </div>
       )}

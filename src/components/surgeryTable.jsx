@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { lazy, Suspense } from "react";
 import SurgerySearch from "./searchBar";
 import "bootstrap/dist/css/bootstrap.min.css";
-import styles from "./surgeryTable.module.css";
+import styles from "./Table.module.css";
 import { ClipLoader } from "react-spinners";
 
 const Table = lazy(() => import("./Table"));
@@ -11,7 +11,7 @@ const SurgeryTable = () => {
   const navigate = useNavigate();
   const [surgeryList, setSurgeryList] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-
+  const [sortDirection, setSortDirection] = useState("asc");
   useEffect(() => {
     const savedData = localStorage.getItem("surgeryList");
     if (savedData) {
@@ -47,24 +47,29 @@ const SurgeryTable = () => {
   const handleSearch = (term) => {
     setSearchTerm(term);
   };
-  const handleLogout = () => {
-    const isLoggedIn = localStorage.getItem("isLoggedIn");
-    localStorage.removeItem(isLoggedIn);
-    navigate("/login");
-  };
+  // const handleLogout = () => {
+  //   const isLoggedIn = localStorage.getItem("isLoggedIn");
+  //   localStorage.removeItem(isLoggedIn);
+  //   navigate("/login");
+  // };
+  function sortByValue(direction) {
+    setSortDirection(direction);
+    const sortedProducts = [...surgeryList].sort((a, b) => {
+      if (direction === "asc") {
+        return a.patientFullName.localeCompare(b.title);
+      } else {
+        return b.patientFullName.localeCompare(a.title);
+      }
+    });
+    setSurgeryList(sortedProducts);
+  }
   return (
     <>
-      {" "}
-      <div className={styles.logout}>
-        <button className="btn btn-primary" onClick={handleLogout}>
-          logout
-        </button>
-      </div>
       <div className={styles.dashboardContainer}>
-        <h1 className={styles.header}>Surgeries</h1>
+        <h2 className={styles.header}>Surgeries</h2>
         <div className={styles.filter}>
           <SurgerySearch searchTerm={searchTerm} handleSearch={handleSearch} />
-          <select>
+          <select onChange={sortByValue}>
             <option value="asc">Sort by Price low to High:</option>
             <option value="desc">Sort by Price High to Low:</option>
           </select>
