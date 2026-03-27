@@ -22,7 +22,7 @@ function PieChart() {
   };
   return (
     <div className={styles.chartSection}>
-      <h2>Surgeries Types</h2>
+      <h4 className={styles.header}>Surgeries Types</h4>
       <div className={styles.Chart}>
         <Chart
           chartType="PieChart"

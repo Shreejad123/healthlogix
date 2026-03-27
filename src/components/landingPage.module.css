@@ -1,9 +1,9 @@
 .heroSection {
   display: flex;
-  justify-content: center; /* Centers horizontally */
+  justify-content: center;
   place-items: center;
-  gap: 20px;
-  margin-top: 10%;
+  gap: 40px;
+  margin-top: 5%;
 }
 
 @media (max-width: 768px) {

@@ -1,36 +1,26 @@
 article {
-  min-height: 100%;
-  background-color: lightblue;
-  list-style-type: none;
+  background-color: #2e5090;
+  color: white;
   margin-top: 5%;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
-.paragraph {
-  margin: 3%;
+  height: 100%;
+  display: flex;
 }
 .footer {
-  background-color: lightblue;
   display: flex;
-  padding: 5px;
+  line-height: 3;
   width: 100%;
 }
-.hospital {
-  text-align: right;
-  margin: 1%;
+.header {
+  margin: 5%;
 }
+
 .links {
   list-style-type: none;
+  gap: 5px;
+  margin-left: 20px;
+  margin-top: 5px;
 }
-.links li {
-  margin-top: 15px;
-  margin-left: 200px;
-}
-.Header {
-  cursor: pointer;
-}
-.links:hover {
-  cursor: pointer;
-}
+
 @media only screen and (max-width: 768px) {
   .footer {
     flex-direction: column;

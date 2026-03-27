@@ -4,7 +4,7 @@ function LineChart() {
   const options = {
     title: "Weekly Surgeries",
     hAxis: { title: "Day" },
-    vAxis: { title: "Number of Surgeries" },
+    vAxis: { title: "Number of Surgeries", format: "0" },
     legend: "none",
   };
 
@@ -65,7 +65,7 @@ function LineChart() {
 
   return (
     <div>
-      <h2>Weekly Surgeries Trend</h2>
+      <h4 className={styles.header}>Weekly Surgeries Trend</h4>
 
       <Chart
         chartType="LineChart"

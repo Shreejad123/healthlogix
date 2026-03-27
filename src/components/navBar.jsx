@@ -13,7 +13,7 @@ function NavBar() {
     <>
       <nav className={styles.header}>
         <div onClick={handleClick} className={styles.NavBar}>
-          <h2 className={styles.header}>HealthLogix Dashboard</h2>
+          <h4 className={styles.header}>HealthLogix Dashboard</h4>
           <ul>
             <li onClick={closeMobileMenu}>
               <span onClick={() => navigate("/")}> Home</span>
@@ -23,7 +23,7 @@ function NavBar() {
             </li>
 
             <li onClick={closeMobileMenu}>
-              <span>Surgeries</span>
+              <span onClick={() => navigate("/SurgeryTable")}>Surgeries</span>
             </li>
             <li onClick={closeMobileMenu}>
               <span>

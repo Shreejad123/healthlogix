@@ -33,7 +33,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/registration" element={<Registration />} />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
         <Route
-          path="/SugeryTable"
+          path="/SurgeryTable"
           element={
             <PrivateRoute>
               <Suspense fallback={<h2>Loading Surgery table...</h2>}>
