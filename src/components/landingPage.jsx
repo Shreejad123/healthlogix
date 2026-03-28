@@ -8,15 +8,14 @@ function LandingPage() {
   const navigate = useNavigate();
   return (
     <>
-      <div>
-        <NavBar></NavBar>
-        <div className={styles.heroSection}>
-          <LineChart></LineChart>
-          <PieChart></PieChart>
-        </div>
+      <NavBar></NavBar>
 
-        <Footer />
+      <div className={styles.heroSection}>
+        <LineChart></LineChart>
+        <PieChart></PieChart>
       </div>
+
+      <Footer />
     </>
   );
 }

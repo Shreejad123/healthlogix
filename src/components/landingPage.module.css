@@ -7,16 +7,9 @@
 }
 
 @media (max-width: 768px) {
-  .landingPage {
+  .heroSection {
     flex-direction: column;
-    padding: 20px;
-    width: 100%;
+    padding: 10px;
     display: flex;
-
-    margin-top: 15%;
-  }
-
-  .loginForm {
-    margin-top: 20px;
   }
 }

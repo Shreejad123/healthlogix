@@ -2,7 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./registrationForm.module.css";
-import Swal from "sweetalert2";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import loginImage from "../assets/doctorRegister.jpg";
 const Registration = () => {
   const navigate = useNavigate();
@@ -129,9 +130,9 @@ const Registration = () => {
       localStorage.setItem("user", JSON.stringify(user));
       console.log("user", user);
 
-      alert("Signup successful!");
-      navigate("/dashboard");
-      Swal.fire("Registration successful!", "success");
+      toast.success("Signup successful!");
+      navigate("/LandingPage");
+
       console.log("Email", email, "password", password);
 
       setFirstName("");
