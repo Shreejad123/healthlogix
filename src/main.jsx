@@ -13,7 +13,7 @@ const SugeryTable = lazy(() => import("./components/surgeryTable"));
 import EditSurgery from "./components/editSurgeries";
 import PatientDetails from "./components/patientDetails";
 import PrivateRoute from "./components/privateRoute";
-import PieChart from "./components/pieChart";
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
@@ -27,9 +27,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             </Suspense>
           }
         />
-        <Route path="/piechart" element={<PieChart />} />
-        <Route path="/login" element={<LoginForm />} />
 
+        <Route path="/login" element={<LoginForm />} />
+        <Route path="/" element={<LoginForm />} />
         <Route path="/registration" element={<Registration />} />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
         <Route
@@ -42,7 +42,14 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             </PrivateRoute>
           }
         />
-        <Route path="/" element={<LandingPage />} />
+        <Route
+          path="/LandingPage"
+          element={
+            <PrivateRoute>
+              <LandingPage />
+            </PrivateRoute>
+          }
+        />
         <Route path="/edit-surgery/:index" element={<EditSurgery />} />
         <Route path="/patient/:index" element={<PatientDetails />} />
       </Routes>

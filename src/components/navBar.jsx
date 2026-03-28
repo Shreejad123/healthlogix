@@ -19,7 +19,7 @@ function NavBar() {
               <span onClick={() => navigate("/")}> Home</span>
             </li>
             <li onClick={closeMobileMenu}>
-              <span onClick={() => navigate("/login")}>Patients</span>
+              <span onClick={() => navigate("/SurgeryTable")}>Patients</span>
             </li>
 
             <li onClick={closeMobileMenu}>

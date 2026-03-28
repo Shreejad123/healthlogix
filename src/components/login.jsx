@@ -36,17 +36,22 @@ function LoginForm() {
     e.preventDefault();
     if (validateForm()) {
       const storedUser = JSON.parse(localStorage.getItem("user"));
-
-      if (!storedUser) {
-        alert("No user found. Please signup first.");
+      console.log(storedUser);
+      console.log(storedUser.email);
+      if (storedUser.email !== email) {
+        toast.error("No user found. Please signup first.");
+        console.log("email");
         return;
       }
 
       if (storedUser.email === email && storedUser.password === password) {
         localStorage.setItem("isLoggedIn", "true");
+        console.log("logged in");
+        toast.success("logging in!", { autoClose: 10000 });
+        setTimeout(() => {
+          navigate("/LandingPage");
+        }, 2000);
 
-        toast.success("logging in!", { autoClose: 1000 });
-        navigate("/dashboard");
         console.log("Logging in with:", { email, password });
       } else {
         toast.error("Invalid email or password", { autoClose: 1000 });

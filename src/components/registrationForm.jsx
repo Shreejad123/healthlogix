@@ -127,6 +127,7 @@ const Registration = () => {
       const user = { email, password };
 
       localStorage.setItem("user", JSON.stringify(user));
+      console.log("user", user);
 
       alert("Signup successful!");
       navigate("/dashboard");
