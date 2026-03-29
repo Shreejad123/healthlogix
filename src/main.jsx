@@ -6,53 +6,55 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Registration from "./components/registrationForm";
 import LoginForm from "./components/login";
 import ForgotPassword from "./components/forgotPassword";
-import LandingPage from "./components/landingPage";
+import LandingPage from "./App";
 const AddSurgery = lazy(() => import("./components/addSurgeries"));
 const SugeryTable = lazy(() => import("./components/surgeryTable"));
-
+import { ThemeProvider } from "./context/ThemeContext";
 import EditSurgery from "./components/editSurgeries";
 import PatientDetails from "./components/patientDetails";
 import PrivateRoute from "./components/privateRoute";
-
+import "./App.css";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
-      <Routes>
-        <Route
-          path="/add-surgery"
-          element={
-            <Suspense fallback={<h2>Loading Add Surgery...</h2>}>
-              {" "}
-              <AddSurgery />
-            </Suspense>
-          }
-        />
-
-        <Route path="/login" element={<LoginForm />} />
-        <Route path="/" element={<LoginForm />} />
-        <Route path="/registration" element={<Registration />} />
-        <Route path="/forgotpassword" element={<ForgotPassword />} />
-        <Route
-          path="/SurgeryTable"
-          element={
-            <PrivateRoute>
-              <Suspense fallback={<h2>Loading Surgery table...</h2>}>
-                <SugeryTable />
+      <ThemeProvider>
+        <Routes>
+          <Route
+            path="/add-surgery"
+            element={
+              <Suspense fallback={<h2>Loading Add Surgery...</h2>}>
+                {" "}
+                <AddSurgery />
               </Suspense>
-            </PrivateRoute>
-          }
-        />
-        <Route
-          path="/LandingPage"
-          element={
-            <PrivateRoute>
-              <LandingPage />
-            </PrivateRoute>
-          }
-        />
-        <Route path="/edit-surgery/:index" element={<EditSurgery />} />
-        <Route path="/patient/:index" element={<PatientDetails />} />
-      </Routes>
+            }
+          />
+
+          <Route path="/login" element={<LoginForm />} />
+          <Route path="/" element={<LoginForm />} />
+          <Route path="/registration" element={<Registration />} />
+          <Route path="/forgotpassword" element={<ForgotPassword />} />
+          <Route
+            path="/SurgeryTable"
+            element={
+              <PrivateRoute>
+                <Suspense fallback={<h2>Loading Surgery table...</h2>}>
+                  <SugeryTable />
+                </Suspense>
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/LandingPage"
+            element={
+              <PrivateRoute>
+                <LandingPage />
+              </PrivateRoute>
+            }
+          />
+          <Route path="/edit-surgery/:index" element={<EditSurgery />} />
+          <Route path="/patient/:index" element={<PatientDetails />} />
+        </Routes>
+      </ThemeProvider>
     </BrowserRouter>
   </React.StrictMode>,
 );
