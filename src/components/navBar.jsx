@@ -16,7 +16,7 @@ function NavBar() {
           <h4 className={styles.header}>HealthLogix Dashboard</h4>
           <ul>
             <li onClick={closeMobileMenu}>
-              <span onClick={() => navigate("/")}> Home</span>
+              <span onClick={() => navigate("/LandingPage")}> Home</span>
             </li>
             <li onClick={closeMobileMenu}>
               <span onClick={() => navigate("/SurgeryTable")}>Patients</span>
@@ -26,7 +26,7 @@ function NavBar() {
               <span onClick={() => navigate("/SurgeryTable")}>Surgeries</span>
             </li>
             <li onClick={closeMobileMenu}>
-              <span>
+              <span onClick={() => navigate("/")}>
                 {" "}
                 <IoPersonSharp size={20} />
               </span>

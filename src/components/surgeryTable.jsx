@@ -11,7 +11,10 @@ const SurgeryTable = () => {
   const navigate = useNavigate();
   const [surgeryList, setSurgeryList] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const [sortDirection, setSortDirection] = useState("asc");
+  // const [sortConfig, setSortConfig] = useState({
+  //   key: null,
+  //   direction: "ascending",
+  // });
   useEffect(() => {
     const savedData = localStorage.getItem("surgeryList");
     if (savedData) {
@@ -52,26 +55,41 @@ const SurgeryTable = () => {
   //   localStorage.removeItem(isLoggedIn);
   //   navigate("/login");
   // };
-  function sortByValue(direction) {
-    setSortDirection(direction);
-    const sortedProducts = [...surgeryList].sort((a, b) => {
-      if (direction === "asc") {
-        return a.patientFullName.localeCompare(b.title);
-      } else {
-        return b.patientFullName.localeCompare(a.title);
-      }
-    });
-    setSurgeryList(sortedProducts);
-  }
+  // const sortData = (items, config) => {
+  //   const sortedItems = [...items]; // Create a copy
+  //   if (config.key !== null) {
+  //     sortedItems.sort((a, b) => {
+  //       if (a[config.key] < b[config.key]) {
+  //         return config.direction === "ascending" ? -1 : 1;
+  //       }
+  //       if (a[config.key] > b[config.key]) {
+  //         return config.direction === "ascending" ? 1 : -1;
+  //       }
+  //       return 0;
+  //     });
+  //   }
+  //   return sortedItems;
+  // };
+
+  // const handleSorting = (key) => {
+  //   let direction = "ascending";
+  //   if (sortConfig.key === key && sortConfig.direction === "ascending") {
+  //     direction = "descending";
+  //   }
+  //   setSortConfig({ key, direction });
+  // };
+  // const filteredAndSortedSurgeries = surgeryList
+  //   .filter(filteredSurgeries)
+  //   .sort(handleSorting);
   return (
     <>
       <div className={styles.dashboardContainer}>
         <h2 className={styles.header}>Surgeries</h2>
         <div className={styles.filter}>
           <SurgerySearch searchTerm={searchTerm} handleSearch={handleSearch} />
-          <select onChange={sortByValue}>
-            <option value="asc">Sort by Price low to High:</option>
-            <option value="desc">Sort by Price High to Low:</option>
+          <select onChange={() => handleSorting("patientfullName")}>
+            <option value="asc">Sort by Patient Name A to Z:</option>
+            <option value="desc">Sort by Patient Name Z to A :</option>
           </select>
           <button
             onClick={handleAddClick}
