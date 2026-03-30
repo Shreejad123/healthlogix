@@ -19,9 +19,15 @@ body {
   justify-content: center;
   place-items: center;
   gap: 40px;
-  margin-top: 5%;
+  margin-top: 2%;
 }
-
+.stat {
+  margin-top: 5%;
+  margin-left: 10%;
+}
+.heroContainer {
+  display: flex;
+}
 @media (max-width: 768px) {
   .heroSection {
     flex-direction: column;
