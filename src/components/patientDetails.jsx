@@ -27,7 +27,6 @@ const PatientDetails = ({}) => {
     <div className={styles.wrapper}>
       <div className={styles.card}>
         <h2 className={styles.title}>Patient Details</h2>
-
         <div className={styles.detailRow}>
           <IoPerson className={styles.icon} />
           <div>
@@ -70,7 +69,7 @@ const PatientDetails = ({}) => {
 
         <button
           className={styles.backButton}
-          onClick={() => navigate("/dashboard")}
+          onClick={() => navigate("/landingPage")}
         >
           Back to Dashboard
         </button>

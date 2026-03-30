@@ -7,7 +7,7 @@ import Registration from "./components/registrationForm";
 import LoginForm from "./components/login";
 import ForgotPassword from "./components/forgotPassword";
 import LandingPage from "./App";
-const AddSurgery = lazy(() => import("./components/addSurgeries"));
+const AddSurgeryPage = lazy(() => import("./components/addSurgeryPage"));
 const PatientTable = lazy(() => import("./components/patientTable"));
 import { ThemeProvider } from "./context/ThemeContext";
 import EditPatient from "./components/editPatient";
@@ -24,7 +24,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             element={
               <Suspense fallback={<h2>Loading Add Surgery...</h2>}>
                 {" "}
-                <AddSurgery />
+                <AddSurgeryPage />
               </Suspense>
             }
           />

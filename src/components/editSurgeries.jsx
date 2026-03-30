@@ -100,13 +100,14 @@ const EditSurgery = () => {
             </div>
             <div className>
               <label>Type of Surgery:</label>
-              <input
-                type="text"
-                className
-                name="Email"
-                value={surgery.surgery}
-                onChange={handleChange}
-              />
+              <select onChange={(e) => setSurgery(e.target.value)}>
+                <option value="" disabled="disabled">
+                  Select the Surgery
+                </option>
+                <option value="Cardiac">Cardiac</option>
+                <option value="Orthopedic">Orthopedic</option>
+                <option value="Neuro">Neuro</option>
+              </select>
             </div>
             <div className={styles.button}>
               <button
@@ -117,7 +118,7 @@ const EditSurgery = () => {
               </button>
               <button
                 type="button"
-                onClick={() => navigate("/dashboard")}
+                onClick={() => navigate("/patientTable")}
                 className={`btn btn-info ${styles.myBtn}`}
               >
                 Cancel

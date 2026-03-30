@@ -5,7 +5,7 @@ import styles from "./addSugeries.module.css";
 
 import Swal from "sweetalert2";
 
-const Addsurgery = () => {
+const AddSurgery = () => {
   const [patientFullName, setPatientFullName] = useState("");
   const [patientNumber, setPatientNumber] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -168,4 +168,4 @@ const Addsurgery = () => {
   );
 };
 
-export default Addsurgery;
+export default AddSurgery;

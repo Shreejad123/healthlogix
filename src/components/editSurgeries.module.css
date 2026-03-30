@@ -48,3 +48,11 @@
   outline: none;
   box-shadow: 0 0 5px rgba(13, 59, 102, 0.3);
 }
+.form select {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  outline: none;
+}
