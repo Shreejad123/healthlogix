@@ -131,7 +131,9 @@ const Registration = () => {
       console.log("user", user);
 
       toast.success("Signup successful!");
-      navigate("/LandingPage");
+      setTimeout(() => {
+        navigate("/LandingPage");
+      }, 2000);
 
       console.log("Email", email, "password", password);
 
@@ -266,6 +268,7 @@ const Registration = () => {
           </div>
         </form>
       </div>
+      <ToastContainer />
     </div>
   );
 };

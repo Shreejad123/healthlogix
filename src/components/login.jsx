@@ -36,9 +36,9 @@ function LoginForm() {
     e.preventDefault();
     if (validateForm()) {
       const storedUser = JSON.parse(localStorage.getItem("user"));
-      console.log(storedUser);
-      console.log(storedUser.email);
-      if (storedUser.email !== email) {
+      // console.log(storedUser);
+      // console.log(storedUser.email);
+      if (!storedUser || storedUser.email !== email) {
         toast.error("No user found. Please signup first.");
         console.log("email");
         return;
@@ -47,6 +47,7 @@ function LoginForm() {
       if (storedUser.email === email && storedUser.password === password) {
         localStorage.setItem("isLoggedIn", "true");
         console.log("logged in");
+        console.log(storedUser.email);
         toast.success("logging in!", { autoClose: 10000 });
         setTimeout(() => {
           navigate("/LandingPage");
