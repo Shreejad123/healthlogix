@@ -1,5 +1,5 @@
 import { Chart } from "react-google-charts";
-import styles from "./dashboard.module.css";
+import styles from "./lineChart.module.css";
 function LineChart() {
   const options = {
     title: "Weekly Surgeries",

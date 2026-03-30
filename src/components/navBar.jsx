@@ -6,6 +6,12 @@ import { useState } from "react";
 
 function NavBar() {
   const navigate = useNavigate();
+  const handleLogout = () => {
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    localStorage.removeItem(isLoggedIn);
+    navigate("/login");
+  };
+
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -18,12 +24,12 @@ function NavBar() {
             <li onClick={closeMobileMenu}>
               <span onClick={() => navigate("/LandingPage")}> Home</span>
             </li>
-            <li onClick={closeMobileMenu}>
-              <span onClick={() => navigate("/patientTable")}>Patients</span>
-            </li>
 
             <li onClick={closeMobileMenu}>
               <span onClick={() => navigate("/patientTable")}>Surgeries</span>
+            </li>
+            <li onClick={closeMobileMenu}>
+              <span onClick={handleLogout}>Logout</span>
             </li>
             <li onClick={closeMobileMenu}>
               <span onClick={() => navigate("/")}>

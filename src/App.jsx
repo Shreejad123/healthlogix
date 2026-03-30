@@ -1,7 +1,7 @@
 import LineChart from "./components/lineChart";
 import PieChart from "./components/pieChart";
 import NavBar from "./components/navBar";
-import styles from "./components/landingPage.module.css";
+import "./App.css";
 import ThemeToggleButton from "./components/ThemeToggleButton";
 import Footer from "./components/Footer";
 function LandingPage() {
@@ -9,7 +9,7 @@ function LandingPage() {
     <>
       <NavBar></NavBar>
       <ThemeToggleButton />
-      <div className={styles.heroSection}>
+      <div className="heroSection">
         <LineChart></LineChart>
         <PieChart></PieChart>
       </div>

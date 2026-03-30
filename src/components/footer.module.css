@@ -16,6 +16,7 @@ article {
 
 .links {
   list-style-type: none;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 768px) {
