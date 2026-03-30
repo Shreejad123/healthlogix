@@ -19,11 +19,11 @@ function NavBar() {
               <span onClick={() => navigate("/LandingPage")}> Home</span>
             </li>
             <li onClick={closeMobileMenu}>
-              <span onClick={() => navigate("/SurgeryTable")}>Patients</span>
+              <span onClick={() => navigate("/patientTable")}>Patients</span>
             </li>
 
             <li onClick={closeMobileMenu}>
-              <span onClick={() => navigate("/SurgeryTable")}>Surgeries</span>
+              <span onClick={() => navigate("/patientTable")}>Surgeries</span>
             </li>
             <li onClick={closeMobileMenu}>
               <span onClick={() => navigate("/")}>

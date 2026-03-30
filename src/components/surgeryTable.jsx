@@ -36,7 +36,7 @@ const SurgeryTable = () => {
   };
 
   const handleEdit = (index) => {
-    navigate(`/edit-surgery/${index}`);
+    navigate(`/edit-patient/${index}`);
   };
 
   const handleDelete = (index) => {

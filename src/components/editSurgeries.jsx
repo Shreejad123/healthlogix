@@ -60,7 +60,7 @@ const EditSurgery = () => {
     localStorage.setItem("surgeryList", JSON.stringify(updatedList));
     toast.success("surgery details updated sucessfully!", { autoClose: 1000 });
     setTimeout(() => {
-      navigate("/dashboard");
+      navigate("/patientTable");
     }, 1500);
   };
 

@@ -1,5 +1,5 @@
 import styles from "./footer.module.css";
-function footer() {
+function Footer() {
   return (
     <>
       <article>
@@ -16,4 +16,4 @@ function footer() {
     </>
   );
 }
-export default footer;
+export default Footer;

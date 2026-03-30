@@ -8,10 +8,10 @@ import LoginForm from "./components/login";
 import ForgotPassword from "./components/forgotPassword";
 import LandingPage from "./App";
 const AddSurgery = lazy(() => import("./components/addSurgeries"));
-const SugeryTable = lazy(() => import("./components/surgeryTable"));
+const PatientTable = lazy(() => import("./components/patientTable"));
 import { ThemeProvider } from "./context/ThemeContext";
-import EditSurgery from "./components/editSurgeries";
-import PatientDetails from "./components/patientDetails";
+import EditPatient from "./components/editPatient";
+import Patient from "./components/patient";
 import PrivateRoute from "./components/privateRoute";
 import "./App.css";
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -34,11 +34,11 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/registration" element={<Registration />} />
           <Route path="/forgotpassword" element={<ForgotPassword />} />
           <Route
-            path="/SurgeryTable"
+            path="/PatientTable"
             element={
               <PrivateRoute>
                 <Suspense fallback={<h2>Loading Surgery table...</h2>}>
-                  <SugeryTable />
+                  <PatientTable />
                 </Suspense>
               </PrivateRoute>
             }
@@ -51,8 +51,22 @@ ReactDOM.createRoot(document.getElementById("root")).render(
               </PrivateRoute>
             }
           />
-          <Route path="/edit-surgery/:index" element={<EditSurgery />} />
-          <Route path="/patient/:index" element={<PatientDetails />} />
+          <Route
+            path="/edit-patient/:index"
+            element={
+              <PrivateRoute>
+                <EditPatient />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/patient/:index"
+            element={
+              <PrivateRoute>
+                <Patient />
+              </PrivateRoute>
+            }
+          />
         </Routes>
       </ThemeProvider>
     </BrowserRouter>

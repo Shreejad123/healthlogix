@@ -76,7 +76,7 @@ const PatientDetails = ({}) => {
         </button>
         <button
           className="btn btn-danger"
-          onClick={() => navigate(`/edit-surgery/${index}`)}
+          onClick={() => navigate(`/edit-patient/${index}`)}
         >
           Edit Patient
         </button>

@@ -1,31 +1,25 @@
-/* From Uiverse.io by gharsh11032000 */
-/* The switch - the box around the slider */
 .switch {
   font-size: 17px;
   position: relative;
-  width: 3.5em;
-  height: 2em;
+
   margin-left: auto;
+  display: inline-block;
 }
 .theme {
   display: flex;
   justify-content: flex-end;
-  margin-right: 5%;
+  margin: 5%;
 }
 /* Hide default HTML checkbox */
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-  margin-left: auto;
-}
 
 /* The slider */
 .slider {
+  width: 3em;
+  height: 1.8em;
   position: absolute;
   cursor: pointer;
   inset: 0;
-  background: #d4acfb;
+  background-color: #2e5090;
   border-radius: 50px;
   transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
@@ -34,7 +28,7 @@
   position: absolute;
   content: "";
   height: 1.4em;
-  width: 1.4em;
+  width: 1.3em;
   left: 0.3em;
   bottom: 0.3em;
   background-color: white;
@@ -44,16 +38,16 @@
 }
 
 .switch input:checked + .slider {
-  background: #b84fce;
+  background-color: #2e5090;
 }
 
 .switch input:focus + .slider {
-  box-shadow: 0 0 1px #b84fce;
+  box-shadow: 0 0 1px #2e5090;
 }
 
 .switch input:checked + .slider:before {
   transform: translateX(1.6em);
-  width: 2em;
-  height: 2em;
+  width: 1.8em;
+  height: 1.8em;
   bottom: 0;
 }
