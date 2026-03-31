@@ -164,7 +164,6 @@ const Registration = () => {
                 className={`form-control ${styles.inputs}`}
                 onChange={(e) => {
                   setFirstName(e.target.value);
-                  validateFirstName(e.target.value);
                 }}
               />
               {firstNameError && (
@@ -181,7 +180,6 @@ const Registration = () => {
                 placeholder="Enter your Last Name"
                 onChange={(e) => {
                   setLastName(e.target.value);
-                  validateLastName(e.target.value);
                 }}
               />
               {lastNameError && <p className={styles.errorMessage}></p>}
@@ -196,7 +194,6 @@ const Registration = () => {
                 value={email}
                 onChange={(e) => {
                   setEmail(e.target.value);
-                  validateEmail(e.target.value);
                 }}
               />
               {emailError && (
@@ -213,7 +210,6 @@ const Registration = () => {
                 value={contactNumber}
                 onChange={(e) => {
                   setContactNumber(e.target.value);
-                  validateContact(e.target.value);
                 }}
               />
               {contactError && (
@@ -230,7 +226,6 @@ const Registration = () => {
                 placeholder="Enter your Password"
                 onChange={(e) => {
                   setPassword(e.target.value);
-                  validatePasswords(e.target.value, confirmPassword);
                 }}
               />
               {passwordError && (
@@ -247,7 +242,6 @@ const Registration = () => {
                 placeholder="Re-Enter Password"
                 onChange={(e) => {
                   setConfirmPassword(e.target.value);
-                  validatePasswords(password, e.target.value);
                 }}
               />
               {confirmPasswordError && (

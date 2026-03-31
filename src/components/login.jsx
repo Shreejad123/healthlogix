@@ -63,7 +63,7 @@ function LoginForm() {
     <div>
       <div id="loginView" className={styles.loginContainer}>
         <div className={styles.branding}>
-          <h4 className={styles.loginHeader}>Hospital Management System</h4>
+          <h3 className={styles.loginHeader}>HealthLogix</h3>
           <img src={loginImage} alt="Background" className={styles.image} />
         </div>
         <form className={styles.loginForm} onSubmit={handleSubmit}>
