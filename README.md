@@ -1,16 +1,45 @@
-# React + Vite
+# 📊 HealthLogix – Surgery Analytics Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🚀 Overview
+HealthLogix is a modern React-based analytics dashboard built to efficiently manage, monitor, and visualize data. It features secure authentication, interactive data visualizations, and real-time user interactions to deliver a seamless and responsive experience.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
+- 🔐 Authentication (Login / Logout)
+- 📊 Interactive charts (Line & Pie)
+- 📈 Dashboard cards (key metrics like surgeries & appointments)
+- 📝 CRUD operations (Add / Edit / Delete)
+- 🔍 Sorting and filtering functionality
+- 🌗 Dark/Light theme toggle
+- ⚡ Lazy loading for performance optimization
+- 🔔 Toast notifications and alerts
+- 📱 Fully responsive design (mobile, tablet, desktop)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ⚡ Technical Highlights
+- Implemented lazy loading to improve performance and reduce initial load time  
+- Used Context API for global state management (theme toggle)  
+- Integrated REST APIs with proper error handling and validation  
+- Designed reusable components for better scalability and maintainability  
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+- React.js  
+- JavaScript (ES6+)  
+- HTML5 & CSS3  
+- React Router  
+- Context API  
+- Chart libraries (react-google-charts)
+
+---
+
+## 📂 Project Setup
+
+```bash
+git clone https://github.com/Shreejad123/healthlogix
+cd healthlogix
+npm install
+npm start
