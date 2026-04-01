@@ -64,7 +64,12 @@ function LoginForm() {
       <div id="loginView" className={styles.loginContainer}>
         <div className={styles.branding}>
           <h3 className={styles.loginHeader}>HealthLogix</h3>
-          <img src={loginImage} alt="Background" className={styles.image} />
+          <img
+            src={loginImage}
+            alt="Background"
+            className={styles.image}
+            loading="lazy"
+          />
         </div>
         <form className={styles.loginForm} onSubmit={handleSubmit}>
           <div className={styles.auth}>

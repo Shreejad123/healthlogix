@@ -4,11 +4,10 @@
   border: none;
   border-radius: 10px;
   width: 50%;
-  margin-left: 2%;
-  margin-top: 2%;
 }
 .button {
   display: flex;
+  gap: 20px;
 }
 .form {
   background-color: #ffffff;
@@ -16,7 +15,8 @@
   border-radius: 15px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   width: 100%;
-
+  flex: 1;
+  flex-wrap: wrap;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -41,7 +41,8 @@
   border: 1px solid #ccc;
   font-size: 16px;
   transition: all 0.2s ease;
-  margin-left: 2px;
+  display: inline-block;
+  margin-left: 12px;
 }
 .form input:focus {
   border-color: #0d3b66;
@@ -55,4 +56,9 @@
   font-size: 14px;
   transition: all 0.2s ease;
   outline: none;
+  margin-left: 12px;
+  width: 45%;
+}
+input[type="date"] {
+  width: 55%;
 }

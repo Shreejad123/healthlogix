@@ -1,13 +1,12 @@
 .page {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  margin: 0;
 }
 
 .content {
-  flex: 1;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  margin: 0;
   padding: 20px;
 }

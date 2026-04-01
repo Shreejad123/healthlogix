@@ -109,6 +109,15 @@ const EditSurgery = () => {
                 <option value="Neuro">Neuro</option>
               </select>
             </div>
+            <div>
+              <label>Surgery Date:</label>
+              <input
+                type="date"
+                name="surgeryDate"
+                value={surgery.surgeryDate}
+                onChange={handleChange}
+              />
+            </div>
             <div className={styles.button}>
               <button
                 type="submit"

@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./addSugeries.module.css";
 
-import Swal from "sweetalert2";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const AddSurgery = () => {
   const [patientFullName, setPatientFullName] = useState("");
@@ -72,17 +73,16 @@ const AddSurgery = () => {
       setSurgeryList(updatedList);
       localStorage.setItem("surgeryList", JSON.stringify(updatedList));
       console.log("updatedList:", updatedList);
-      Swal.fire("Surgery details saved ✅");
+      toast.success("Surgery details saved", { autoClose: 1000 });
 
       // Reset fields
       setPatientFullName("");
       setPatientNumber("");
       setPhoneNumber("");
       setSurgeryDate("");
-      SetSurgery("");
+      setSurgery("");
 
       // Redirect to surgeries table
-      navigate("/dashboard");
     } else {
     }
   };
@@ -164,6 +164,7 @@ const AddSurgery = () => {
           Save
         </button>
       </form>
+      <ToastContainer />
     </div>
   );
 };

@@ -12,16 +12,16 @@ function StatsCard() {
     <>
       <div className="statsCard">
         <div className="statsPatient">
-          <h2>
+          <h3>
             <BsPeopleFill />
             Total Patients: {countpatientFullName}
-          </h2>
+          </h3>
         </div>
         <div className="statsSugery">
-          <h2>
+          <h3>
             <ImScissors />
             Total Surgeries : {count}
-          </h2>
+          </h3>
         </div>
       </div>
     </>
