@@ -3,7 +3,7 @@ import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import styles from "./surgeryTable.module.css";
+import styles from "./Table.module.css";
 import { IoChevronForward } from "react-icons/io5";
 import { IoIosArrowBack } from "react-icons/io";
 

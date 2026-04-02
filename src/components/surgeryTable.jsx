@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { lazy, Suspense } from "react";
 import SurgerySearch from "./searchBar";
 import "bootstrap/dist/css/bootstrap.min.css";
-import styles from "./Table.module.css";
+import styles from "./surgeryTable.module.css";
 import { ClipLoader } from "react-spinners";
 
 const Table = lazy(() => import("./Table"));
@@ -71,13 +71,13 @@ const SurgeryTable = () => {
   //   return sortedItems;
   // };
 
-  // const handleSorting = (key) => {
-  //   let direction = "ascending";
-  //   if (sortConfig.key === key && sortConfig.direction === "ascending") {
-  //     direction = "descending";
-  //   }
-  //   setSortConfig({ key, direction });
-  // };
+  const handleSorting = (key) => {
+    let direction = "ascending";
+    if (sortConfig.key === key && sortConfig.direction === "ascending") {
+      direction = "descending";
+    }
+    setSortConfig({ key, direction });
+  };
   // const filteredAndSortedSurgeries = surgeryList
   //   .filter(filteredSurgeries)
   //   .sort(handleSorting);
