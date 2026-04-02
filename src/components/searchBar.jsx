@@ -1,11 +1,10 @@
 const SurgerySearch = ({ searchTerm, handleSearch }) => {
   return (
-    <form className="form-inline my-2 my-lg-0">
+    <form className="search">
       <input
         className="form-control search-input"
         type="search"
         placeholder="Search for names..."
-        aria-label="Search"
         title="Type in a name"
         value={searchTerm}
         onChange={(e) => handleSearch(e.target.value)}

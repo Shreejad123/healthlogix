@@ -18,7 +18,7 @@ const ThemeToggleButton = () => {
           onChange={toggleTheme}
         />
         <span className={styles.slider}></span> &nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Switch to{" "}
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;Switch to{" "}
         {theme === "dark" ? "Light Mode" : "Dark Mode"}
       </label>
     </div>

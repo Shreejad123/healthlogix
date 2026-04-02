@@ -64,6 +64,7 @@ function LoginForm() {
       <div id="loginView" className={styles.loginContainer}>
         <div className={styles.branding}>
           <h3 className={styles.loginHeader}>HealthLogix</h3>
+          <p className={styles.loginHeader}>Explore the app without login</p>
           <img
             src={loginImage}
             alt="Background"
@@ -108,6 +109,12 @@ function LoginForm() {
                 className={`btn btn-primary ${styles.loginBtn}`}
               >
                 Sign In
+              </button>
+              <button
+                className={`btn btn-primary ${styles.loginBtn}`}
+                onClick={() => navigate("/LandingPage")}
+              >
+                View Demo Dashboard
               </button>
             </div>
             <p className={styles.signup}>

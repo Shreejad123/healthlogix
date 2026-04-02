@@ -8,6 +8,19 @@ function StatsCard() {
     (item) => item.patientFullName,
   ).length;
   const count = savedData.filter((item) => item.surgery).length;
+
+  const surgeries = JSON.parse(localStorage.getItem("surgeryList")) || [];
+  console.log("surgeries", surgeries);
+  const counts = {};
+
+  surgeries.forEach((p) => {
+    if (!p.surgery) return;
+
+    const type = p.surgery;
+    counts[type] = (counts[type] || 0) + 1;
+  });
+
+  console.log("counts:", counts);
   return (
     <>
       <div className="statsCard">

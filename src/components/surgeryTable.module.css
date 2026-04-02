@@ -1,14 +1,12 @@
 .dashboardContainer {
-  padding: 60px;
-  width: 100%;
+  width: 90%;
   border-radius: 10px;
-  justify-items: center;
+  margin-left: auto;
 }
 
 .customBtn {
-  margin-bottom: 2%;
   background-color: #0d3b66;
-  width: 25%;
+  width: 20%;
   border: none;
 }
 .header {
@@ -17,12 +15,8 @@
 }
 .filter {
   display: flex;
-  width: 80%;
-  gap: 40px;
-  justify-items: center;
-  align-items: center;
+  gap: 50px;
   margin-bottom: 20px;
-  margin-left: 5%;
 }
 .filter select {
   padding: 10px 12px;
