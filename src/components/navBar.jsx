@@ -3,16 +3,20 @@ import { useNavigate } from "react-router-dom";
 import { IoPersonSharp } from "react-icons/io5";
 
 import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function NavBar() {
   const navigate = useNavigate();
   const handleLogout = () => {
     const isLoggedIn = localStorage.getItem("isLoggedIn");
+    toast.success("Redirecting to dashboard!", { autoClose: 10000 });
+    setTimeout(() => {
+      navigate("/");
+    }, 2000);
     localStorage.removeItem(isLoggedIn);
-    navigate("/login");
   };
 
-  const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
   return (
@@ -39,6 +43,7 @@ function NavBar() {
             </li>
           </ul>
         </div>
+        <ToastContainer />
       </nav>
     </>
   );

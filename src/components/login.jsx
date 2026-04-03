@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState("");
+  const [errors, setErrors] = useState({});
   const navigate = useNavigate();
   const viewDemo = () => {
     const demoUser = {
@@ -20,7 +20,11 @@ function LoginForm() {
 
     localStorage.setItem("user", JSON.stringify(demoUser));
     localStorage.setItem("isLoggedIn", "true");
-    navigate("/LandingPage");
+    setErrors({});
+    toast.success("logging in as demo user!", { autoClose: 1000 });
+    setTimeout(() => {
+      navigate("/LandingPage");
+    }, 2000);
   };
   const validateForm = () => {
     const newErrors = {};
@@ -120,6 +124,7 @@ function LoginForm() {
                 Sign In
               </button>
               <button
+                type="button"
                 className={`btn btn-primary ${styles.loginBtn}`}
                 onClick={viewDemo}
               >

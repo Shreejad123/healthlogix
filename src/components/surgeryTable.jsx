@@ -101,7 +101,6 @@ const SurgeryTable = () => {
         <Suspense
           fallback={
             <div>
-              {" "}
               <ClipLoader />
             </div>
           }

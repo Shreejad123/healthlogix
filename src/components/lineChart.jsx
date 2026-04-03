@@ -1,5 +1,6 @@
 import { Chart } from "react-google-charts";
 import styles from "./lineChart.module.css";
+
 function LineChart() {
   // const demoData = [
   //   {

@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Registration from "./components/registrationForm";
 import LoginForm from "./components/login";
 import ForgotPassword from "./components/forgotPassword";
+
 import LandingPage from "./App";
 const AddSurgeryPage = lazy(() => import("./components/addSurgeryPage"));
 const PatientTable = lazy(() => import("./components/patientTable"));
@@ -48,6 +49,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             path="/LandingPage"
             element={
               <PrivateRoute>
+                <Suspense fallback={<h2>Loading Dashboard...</h2>}></Suspense>
                 <LandingPage />
               </PrivateRoute>
             }

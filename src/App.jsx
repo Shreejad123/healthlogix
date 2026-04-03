@@ -1,10 +1,12 @@
-import LineChart from "./components/lineChart";
-import PieChart from "./components/pieChart";
-import NavBar from "./components/navBar";
 import "./App.css";
+import { Suspense, lazy } from "react";
+import NavBar from "./components/navBar";
+const LineChart = lazy(() => import("./components/lineChart"));
+const PieChart = lazy(() => import("./components/pieChart"));
 import StatsCard from "./components/statsCard";
 import ThemeToggleButton from "./components/ThemeToggleButton";
 import Footer from "./components/Footer";
+import { ClipLoader } from "react-spinners";
 function LandingPage() {
   return (
     <>
@@ -16,8 +18,20 @@ function LandingPage() {
         </div>
       </div>
       <div className="heroSection">
-        <LineChart></LineChart>
-        <PieChart></PieChart>
+        <Suspense
+          fallback={
+            <h2>
+              {" "}
+              <div>
+                <ClipLoader />
+              </div>
+              Loading ...
+            </h2>
+          }
+        >
+          <LineChart></LineChart>
+          <PieChart></PieChart>
+        </Suspense>
       </div>
 
       <Footer />
