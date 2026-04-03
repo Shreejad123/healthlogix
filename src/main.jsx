@@ -31,7 +31,14 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             }
           />
 
-          <Route path="/login" element={<LoginForm />} />
+          <Route
+            path="/login"
+            element={
+              <Suspense fallback={<h2>Loading Add Surgery...</h2>}>
+                <LoginForm />
+              </Suspense>
+            }
+          />
           <Route path="/" element={<LoginForm />} />
           <Route path="/registration" element={<Registration />} />
           <Route path="/forgotpassword" element={<ForgotPassword />} />
