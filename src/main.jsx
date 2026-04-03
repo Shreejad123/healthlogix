@@ -34,7 +34,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route
             path="/login"
             element={
-              <Suspense fallback={<h2>Loading Add Surgery...</h2>}>
+              <Suspense fallback={<h2>Loading Login page...</h2>}>
                 <LoginForm />
               </Suspense>
             }
