@@ -12,7 +12,16 @@ function LoginForm() {
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState("");
   const navigate = useNavigate();
+  const viewDemo = () => {
+    const demoUser = {
+      name: "Demo User",
+      role: "demo",
+    };
 
+    localStorage.setItem("user", JSON.stringify(demoUser));
+    localStorage.setItem("isLoggedIn", "true");
+    navigate("/LandingPage");
+  };
   const validateForm = () => {
     const newErrors = {};
 
@@ -112,7 +121,7 @@ function LoginForm() {
               </button>
               <button
                 className={`btn btn-primary ${styles.loginBtn}`}
-                onClick={() => navigate("/LandingPage")}
+                onClick={viewDemo}
               >
                 View Demo Dashboard
               </button>
