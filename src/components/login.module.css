@@ -10,6 +10,7 @@ body {
 .loginContainer {
   margin-top: 5%;
   min-height: 100vh;
+  min-width: 100vh;
   padding: 20px;
   max-width: 46.875rem;
   transition:
