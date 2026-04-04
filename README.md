@@ -46,8 +46,8 @@ npm start
 
 ## 📊 Screenshots
 
-![Dashboard](Images/dashboard.png)
-![Stats](Images/statsCard.png)
-![SurgeryTable](Images/surgeryTable.png)
+![Dashboard](./Images/dashboard.png)
+![Stats](./Images/statsCard.png)
+![SurgeryTable](./Images/surgeryTable.png)
 ### 🌙 Dark Mode
-![Dashboard](Images/darkMode.png)
+![Dashboard](./Images/darkMode.png)
