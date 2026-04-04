@@ -43,3 +43,11 @@ git clone https://github.com/Shreejad123/healthlogix
 cd healthlogix
 npm install
 npm start
+
+## 📊 Screenshots
+
+![Dashboard](images/dashboard.png)
+![Stats](images/statsCard.png)
+![SurgeryTable](images/surgeryTable.png)
+### 🌙 Dark Mode
+![Dashboard](images/darkMode.png)
