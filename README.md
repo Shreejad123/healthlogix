@@ -38,7 +38,7 @@ HealthLogix is a modern React-based analytics dashboard built to efficiently man
 
 ## 📂 Project Setup
 
-```bash
+bash
 git clone https://github.com/Shreejad123/healthlogix
 cd healthlogix
 npm install
