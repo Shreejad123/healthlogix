@@ -1,11 +1,13 @@
 # 📊 HealthLogix – Surgery Analytics Dashboard
 
 ## 🚀 Overview
+
 HealthLogix is a modern React-based analytics dashboard built to efficiently manage, monitor, and visualize data. It features secure authentication, interactive data visualizations, and real-time user interactions to deliver a seamless and responsive experience.
 
 ---
 
 ## ✨ Features
+
 - 🔐 Authentication (Login / Logout)
 - 📊 Interactive charts (Line & Pie)
 - 📈 Dashboard cards (key metrics like surgeries & appointments)
@@ -19,26 +21,27 @@ HealthLogix is a modern React-based analytics dashboard built to efficiently man
 ---
 
 ## ⚡ Technical Highlights
-- Implemented lazy loading to improve performance and reduce initial load time  
-- Used Context API for global state management (theme toggle)  
-- Integrated REST APIs with proper error handling and validation  
-- Designed reusable components for better scalability and maintainability  
+
+- Implemented lazy loading to improve performance and reduce initial load time
+- Used Context API for global state management (theme toggle)
+- Integrated REST APIs with proper error handling and validation
+- Designed reusable components for better scalability and maintainability
 
 ---
 
 ## 🛠️ Tech Stack
-- React.js  
-- JavaScript (ES6+)  
-- HTML5 & CSS3  
-- React Router  
-- Context API  
+
+- React.js
+- JavaScript (ES6+)
+- HTML5 & CSS3
+- React Router
+- Context API
 - Chart libraries (react-google-charts)
 
 ---
 
 ## 📂 Project Setup
 
-```bash
 git clone https://github.com/Shreejad123/healthlogix
 cd healthlogix
 npm install
@@ -49,5 +52,7 @@ npm start
 ![Dashboard](./Images/dashboard.png)
 ![Stats](./Images/statsCard.png)
 ![SurgeryTable](./Images/surgeryTable.png)
+
 ### 🌙 Dark Mode
+
 ![Dashboard](./Images/darkMode.png)
