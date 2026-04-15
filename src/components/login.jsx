@@ -6,12 +6,15 @@ import loginImage from "../assets/doctorImage.jpg";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
+import Skeleton from "react-loading-skeleton"; // Popular choice: react-loading-skeleton
+import "react-loading-skeleton/dist/skeleton.css";
 
 function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
+  const [loaded, setLoaded] = useState(false);
   const viewDemo = () => {
     const demoUser = {
       name: "Demo User",
@@ -77,13 +80,27 @@ function LoginForm() {
       <div id="loginView" className={styles.loginContainer}>
         <div className={styles.branding}>
           <h3 className={styles.loginHeader}>HealthLogix</h3>
-          <p className={styles.loginHeader}>Explore the app without login</p>
-          <img
-            src={loginImage}
-            alt="Background"
-            className={styles.image}
-            loading="lazy"
-          />
+          <p className={styles.loginHeaders}>
+            Explore the app without login &nbsp;
+            <a href="#" onClick={viewDemo}>
+              View Demo
+            </a>{" "}
+          </p>
+          <div className={styles.imageContainer}>
+            {!loaded && (
+              <Skeleton
+                width="100%"
+                height="100%"
+                className={styles.skeletonImage}
+              />
+            )}
+            <img
+              src={loginImage}
+              alt="Background"
+              className={styles.image}
+              onLoad={() => setLoaded(true)}
+            />
+          </div>
         </div>
         <form className={styles.loginForm} onSubmit={handleSubmit}>
           <div className={styles.auth}>
