@@ -5,10 +5,10 @@
 HealthLogix is a modern React-based analytics dashboard built to efficiently manage, monitor, and visualize data. It features secure authentication, interactive data visualizations, and real-time user interactions to deliver a seamless and responsive experience.
 
 ---
-
 ## ✨ Features
 
 - 🔐 Authentication (Login / Logout)
+- 👀 Demo Mode for instant access without signup
 - 📊 Interactive charts (Line & Pie)
 - 📈 Dashboard cards (key metrics like surgeries & appointments)
 - 📝 CRUD operations (Add / Edit / Delete)
@@ -18,7 +18,13 @@ HealthLogix is a modern React-based analytics dashboard built to efficiently man
 - 🔔 Toast notifications and alerts
 - 📱 Fully responsive design (mobile, tablet, desktop)
 
----
+## 👀 Demo Mode
+
+This application includes a demo mode that allows users and recruiters to explore the dashboard without creating an account.
+
+- Provides instant access to key features
+- Simulated real-world data for demonstration purposes
+- Improves usability and onboarding experience
 
 ## ⚡ Technical Highlights
 
