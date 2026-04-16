@@ -87,13 +87,7 @@ function LoginForm() {
             </a>{" "}
           </p>
           <div className={styles.imageContainer}>
-            {!loaded && (
-              <Skeleton
-                width="100%"
-                height="100%"
-                className={styles.skeletonImage}
-              />
-            )}
+            {!loaded && <Skeleton className={styles.skeletonImage} />}
             <img
               src={loginImage}
               alt="Background"
