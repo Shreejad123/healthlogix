@@ -5,6 +5,8 @@ import styles from "./registrationForm.module.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import loginImage from "../assets/doctorRegister.jpg";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 const Registration = () => {
   const navigate = useNavigate();
 
@@ -21,7 +23,7 @@ const Registration = () => {
   const [contactError, setContactError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [confirmPasswordError, setConfirmPasswordError] = useState("");
-
+  const [loaded, setLoaded] = useState(false);
   const nameRegex = /^[a-zA-Z\s'-]+$/;
   const phoneRegex = /^[0-9]{10}$/;
   const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
@@ -151,7 +153,15 @@ const Registration = () => {
       <div className={styles.user_details}>
         <div className={styles.branding}></div>
         <h2 className={styles.header}>Register</h2>
-        <img src={loginImage} alt="Background" className={styles.image} />
+        <div className={styles.imageContainer}>
+          {!loaded && <Skeleton className={styles.skeletonImage} />}
+          <img
+            src={loginImage}
+            alt="Background"
+            className={styles.image}
+            onLoad={() => setLoaded(true)}
+          />
+        </div>
         <form onSubmit={handleSubmit} className={styles.form}>
           <div className={styles.user_form}>
             <div className={styles.input}>

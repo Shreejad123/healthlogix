@@ -1,11 +1,12 @@
 .NavBar {
   display: flex;
   background-color: #2e5090;
-  width: 79rem;
+  width: 80rem;
   display: flex;
   align-items: center;
   padding: 10px;
   color: white;
+  border-radius: 10px;
 }
 .header {
   display: flex;
