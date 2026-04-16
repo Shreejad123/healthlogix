@@ -10,7 +10,7 @@ function NavBar() {
   const navigate = useNavigate();
   const handleLogout = () => {
     const isLoggedIn = localStorage.getItem("isLoggedIn");
-    toast.success("Redirecting to dashboard!", { autoClose: 10000 });
+    toast.success("Redirecting to login page!", { autoClose: 10000 });
     setTimeout(() => {
       navigate("/");
     }, 2000);

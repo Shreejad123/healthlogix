@@ -1,11 +1,16 @@
 import styles from "./footer.module.css";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function Footer() {
   const navigate = useNavigate();
   const handleLogout = () => {
     const isLoggedIn = localStorage.getItem("isLoggedIn");
     localStorage.removeItem(isLoggedIn);
-    navigate("/login");
+    toast.success("Redirecting to login page!", { autoClose: 10000 });
+    setTimeout(() => {
+      navigate("/");
+    }, 2000);
   };
 
   return (
@@ -18,6 +23,7 @@ function Footer() {
             <li onClick={() => navigate("/patientTable")}>Surgeries</li>
             <li onClick={handleLogout}> Logout</li>
           </ol>
+          <ToastContainer />
         </footer>
         {/* <p className={styles.hospital}>©Hospital Mangement 2026</p> */}
       </article>
