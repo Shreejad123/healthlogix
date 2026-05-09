@@ -1,7 +1,7 @@
 .addSurgery {
   min-height: 100vh;
   display: flex;
-
+  width: 40%;
   padding: 20px;
 }
 
@@ -95,9 +95,10 @@
 @media (max-width: 768px) {
   .addSurgeryContainer {
     grid-template-columns: 1fr;
-    width: 100%;
   }
-
+  .addSurgery {
+    width: 35%;
+  }
   .formGroup:last-child {
     grid-column: span 1;
   }

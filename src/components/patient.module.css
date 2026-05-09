@@ -10,3 +10,11 @@
   justify-content: center;
   align-items: center;
 }
+@media (max-width: 48rem) {
+  .content {
+    flex-direction: column;
+    padding: 15px;
+    width: 90%;
+    margin-left: 3%;
+  }
+}
