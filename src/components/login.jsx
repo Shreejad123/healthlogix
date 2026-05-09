@@ -8,7 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
 import Skeleton from "react-loading-skeleton"; // Popular choice: react-loading-skeleton
 import "react-loading-skeleton/dist/skeleton.css";
-
+import { FaHandPointDown } from "react-icons/fa";
 function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -79,7 +79,8 @@ function LoginForm() {
     <div>
       <div id="loginView" className={styles.loginContainer}>
         <div className={styles.branding}>
-          <h3 className={styles.loginHeader}>HealthLogix</h3>
+          <FaHandPointDown size={50} className={styles.handDown} />
+          <h3 className={styles.loginHeader}>HealthLogix </h3>
           <p className={styles.loginHeaders}>
             Explore the app without login &nbsp;
             <a href="#" onClick={viewDemo}>
