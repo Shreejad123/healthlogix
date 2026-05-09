@@ -1,4 +1,4 @@
-import "./statsCard.css";
+import styles from "./statsCard.module.css";
 import { BsPeopleFill } from "react-icons/bs";
 import { ImScissors } from "react-icons/im";
 function StatsCard() {
@@ -379,15 +379,15 @@ function StatsCard() {
   console.log("counts:", counts);
 
   return (
-    <div className="statsCard">
-      <div className="statsPatient">
+    <div className={styles.statsCard}>
+      <div className={styles.statsSugery}>
         <h3>
           <BsPeopleFill />
           Total Patients: {totalPatients}
         </h3>
       </div>
 
-      <div className="statsSugery">
+      <div className={styles.statsPatient}>
         <h3>
           <ImScissors />
           Total Surgeries: {totalSurgeries}

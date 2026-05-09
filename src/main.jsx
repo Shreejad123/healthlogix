@@ -14,7 +14,6 @@ import { ThemeProvider } from "./context/ThemeContext";
 import EditPatient from "./components/editPatient";
 import Patient from "./components/patient";
 import PrivateRoute from "./components/privateRoute";
-import "./App.css";
 import StatsCard from "./components/statsCard";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

@@ -1,0 +1,34 @@
+.statsPatient {
+  width: 40%;
+  background-color: #5f9ea0;
+  padding: 20px;
+  border-radius: 10px;
+  height: 7rem;
+  text-align: center;
+}
+.statsSugery {
+  width: 40%;
+  background-color: #ffac1c;
+  padding: 20px;
+  border-radius: 10px;
+  height: 7rem;
+  text-align: center;
+}
+.statsCard {
+  display: flex;
+  gap: 40px;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+@media (max-width: 768px) {
+  .statsCard {
+    display: grid;
+    margin-top: 2rem;
+    grid-template-columns: 1fr;
+    height: 80%;
+    justify-content: center;
+    margin-left: 38%;
+  }
+}

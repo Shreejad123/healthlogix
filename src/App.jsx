@@ -1,4 +1,4 @@
-import "./App.css";
+import styles from "./App.module.css";
 import { Suspense, lazy } from "react";
 import NavBar from "./components/navBar";
 const LineChart = lazy(() => import("./components/lineChart"));
@@ -11,13 +11,13 @@ function LandingPage() {
   return (
     <>
       <NavBar></NavBar>
-      <div className="heroContainer">
-        <div className="stat">
+      <div className={styles.heroContainer}>
+        <div className={styles.stat}>
           <StatsCard />
-          <ThemeToggleButton />
+          <ThemeToggleButton className={styles.theme} />
         </div>
       </div>
-      <div className="heroSection">
+      <div className={styles.heroSection}>
         <Suspense
           fallback={
             <h2>
@@ -29,7 +29,7 @@ function LandingPage() {
             </h2>
           }
         >
-          <LineChart></LineChart>
+          <LineChart className={styles.lineChart}></LineChart>
           <PieChart></PieChart>
         </Suspense>
       </div>
