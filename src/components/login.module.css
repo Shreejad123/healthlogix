@@ -111,6 +111,7 @@ body {
   object-fit: cover;
   overflow: hidden;
 }
+
 .handDown {
   animation: bounce 1s infinite;
   margin-left: 65%;

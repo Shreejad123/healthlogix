@@ -1,11 +1,11 @@
 import styles from "./navBar.module.css";
 import { useNavigate } from "react-router-dom";
 import { IoPersonSharp } from "react-icons/io5";
-
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import CloseMenu from "../assets/close.svg";
+import MenuIcon from "../assets/menu.svg";
 function NavBar() {
   const navigate = useNavigate();
   const handleLogout = () => {
@@ -17,34 +17,62 @@ function NavBar() {
     localStorage.removeItem(isLoggedIn);
   };
 
+  const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
   return (
     <>
-      <nav className={styles.header}>
-        <div onClick={handleClick} className={styles.NavBar}>
-          <h4 className={styles.header}>HealthLogix Dashboard</h4>
-          <ul>
-            <li onClick={closeMobileMenu}>
-              <span onClick={() => navigate("/LandingPage")}> Home</span>
-            </li>
+      <div className={styles.NavBar}>
+        <h4 className={styles.header}>HealthLogix Dashboard</h4>
+        <ul className={`${styles.navOptions} ${click ? styles.active : ""}`}>
+          <li>
+            <span
+              onClick={() => {
+                navigate("/LandingPage");
+                closeMobileMenu();
+              }}
+            >
+              {" "}
+              Home
+            </span>
+          </li>
 
-            <li onClick={closeMobileMenu}>
-              <span onClick={() => navigate("/patientTable")}>Surgeries</span>
-            </li>
-            <li onClick={closeMobileMenu}>
-              <span onClick={handleLogout}>Logout</span>
-            </li>
-            <li onClick={closeMobileMenu}>
-              <span onClick={() => navigate("/")}>
-                {" "}
-                <IoPersonSharp size={20} />
-              </span>
-            </li>
-          </ul>
-        </div>
-        <ToastContainer />
-      </nav>
+          <li>
+            <span
+              onClick={() => {
+                navigate("/patientTable");
+                closeMobileMenu();
+              }}
+            >
+              Surgeries
+            </span>
+          </li>
+          <li>
+            <span
+              onClick={() => {
+                handleLogout();
+                closeMobileMenu();
+              }}
+            >
+              Logout
+            </span>
+          </li>
+          <li>
+            <span onClick={() => navigate("/")}>
+              {" "}
+              <IoPersonSharp size={20} />
+            </span>
+          </li>
+        </ul>
+      </div>
+      <div className={styles.mobileMenu} onClick={handleClick}>
+        <img
+          src={click ? CloseMenu : MenuIcon}
+          alt="menu"
+          className={styles.menuIcon}
+        />
+      </div>
+      <ToastContainer />
     </>
   );
 }

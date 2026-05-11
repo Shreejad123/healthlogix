@@ -11,10 +11,8 @@ const SurgeryTable = () => {
   const navigate = useNavigate();
   const [surgeryList, setSurgeryList] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  // const [sortConfig, setSortConfig] = useState({
-  //   key: null,
-  //   direction: "ascending",
-  // });
+  const [sortDirection, setSortDirection] = useState("asc");
+
   useEffect(() => {
     const savedData = localStorage.getItem("surgeryList");
     if (savedData) {
@@ -50,46 +48,31 @@ const SurgeryTable = () => {
   const handleSearch = (term) => {
     setSearchTerm(term);
   };
-  // const handleLogout = () => {
-  //   const isLoggedIn = localStorage.getItem("isLoggedIn");
-  //   localStorage.removeItem(isLoggedIn);
-  //   navigate("/login");
-  // };
-  // const sortData = (items, config) => {
-  //   const sortedItems = [...items]; // Create a copy
-  //   if (config.key !== null) {
-  //     sortedItems.sort((a, b) => {
-  //       if (a[config.key] < b[config.key]) {
-  //         return config.direction === "ascending" ? -1 : 1;
-  //       }
-  //       if (a[config.key] > b[config.key]) {
-  //         return config.direction === "ascending" ? 1 : -1;
-  //       }
-  //       return 0;
-  //     });
-  //   }
-  //   return sortedItems;
-  // };
 
-  const handleSorting = (key) => {
-    let direction = "ascending";
-    if (sortConfig.key === key && sortConfig.direction === "ascending") {
-      direction = "descending";
-    }
-    setSortConfig({ key, direction });
-  };
-  // const filteredAndSortedSurgeries = surgeryList
-  //   .filter(filteredSurgeries)
-  //   .sort(handleSorting);
+  function sortByTitle(direction) {
+    setSortDirection(direction);
+    const sortedProducts = [...surgeryList].sort((a, b) => {
+      if (direction === "asc") {
+        return a.patientFullName.localeCompare(b.patientFullName);
+      } else {
+        return b.patientFullName.localeCompare(a.patientFullName);
+      }
+    });
+    setSurgeryList(sortedProducts);
+  }
+
   return (
     <>
       <div className={styles.dashboardContainer}>
         <h2 className={styles.header}>Surgeries</h2>
         <div className={styles.filter}>
           <SurgerySearch searchTerm={searchTerm} handleSearch={handleSearch} />
-          <select onChange={() => handleSorting("patientfullName")}>
-            <option value="asc">Sort by Patient Name A to Z:</option>
-            <option value="desc">Sort by Patient Name Z to A :</option>
+          <select onChange={(e) => sortByTitle(e.target.value)}>
+            <option value="" disabled selected hidden>
+              Sort by Patient Name{" "}
+            </option>
+            <option value="asc">A to Z </option>
+            <option value="desc"> Z to A</option>
           </select>
           <button
             onClick={handleAddClick}
