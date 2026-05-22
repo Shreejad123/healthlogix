@@ -112,7 +112,7 @@ body {
   overflow: hidden;
 }
 
-.handDown {
+/* .handDown {
   animation: bounce 1s infinite;
   margin-left: 65%;
 }
@@ -124,7 +124,7 @@ body {
   50% {
     transform: translateY(10px);
   }
-}
+} */
 @media (max-width: 768px) {
   .loginContainer {
     flex-direction: column;

@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 1.2fr 1.3fr;
   padding: 20px;
-  margin-left: 5%;
+
   gap: 20px;
 }
 .skeletonImage {
@@ -15,11 +15,11 @@
   box-shadow: 0 12px 48px 0 rgba(31, 38, 135, 0.5);
 }
 .image {
-  width: 18rem;
+  width: 16rem;
   border-radius: 8px;
   height: 90%;
 }
-.inputs {
+.input {
   flex: 1;
   display: flex;
 
@@ -29,7 +29,7 @@
   gap: 0px;
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1.8fr;
+  grid-template-columns: 1fr 2fr;
   max-width: 1000px;
   padding: 20px;
   margin: 0 auto;
@@ -80,13 +80,28 @@
 @media (max-width: 768px) {
   .user_details {
     display: grid;
-    grid-template-columns: 1fr; /* Defines a single column */
-    gap: 16px; /* Space between items */
+    grid-template-columns: 1fr;
+    gap: 16px;
+    width: 350px;
   }
   .user_form {
     display: grid;
     grid-template-columns: 1fr;
-    margin-left: 5%;
+    margin-right: auto;
     width: 100%;
+  }
+  .input {
+    width: 100%;
+  }
+  .link {
+    font-size: 14px;
+    margin-right: 4%;
+    margin-bottom: 15px;
+  }
+  .header {
+    margin-right: 5%;
+  }
+  .image {
+    margin-left: 4%;
   }
 }

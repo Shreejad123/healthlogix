@@ -58,7 +58,11 @@ function NavBar() {
             </span>
           </li>
           <li>
-            <span onClick={() => navigate("/")}>
+            <span
+              onClick={() => {
+                handleLogout();
+              }}
+            >
               {" "}
               <IoPersonSharp size={20} />
             </span>
@@ -66,6 +70,7 @@ function NavBar() {
         </ul>
       </div>
       <div className={styles.mobileMenu} onClick={handleClick}>
+        <h4 className={styles.heading}>HealthLogix Dashboard</h4>
         <img
           src={click ? CloseMenu : MenuIcon}
           alt="menu"

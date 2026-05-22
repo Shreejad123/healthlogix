@@ -79,7 +79,6 @@ function LoginForm() {
     <div>
       <div id="loginView" className={styles.loginContainer}>
         <div className={styles.branding}>
-          <FaHandPointDown size={50} className={styles.handDown} />
           <h3 className={styles.loginHeader}>HealthLogix </h3>
           <p className={styles.loginHeaders}>
             Explore the app without login &nbsp;

@@ -45,11 +45,6 @@ ul li span {
   list-style-type: none;
 }
 @media (max-width: 700px) {
-  .header {
-    padding: 0px 10px;
-    position: relative;
-  }
-
   .navOptions {
     display: flex;
     flex-direction: column;
@@ -57,12 +52,15 @@ ul li span {
     height: 350px;
     position: absolute;
     top: 80px;
-    left: -100%;
+    /* left: -100%; */
     transition: all 0.5s ease;
     gap: 0;
   }
   ul {
     background-color: #2e5090;
+  }
+  li {
+    margin-left: 100px;
   }
   .active {
     left: 0;
@@ -72,15 +70,20 @@ ul li span {
   }
 
   .mobileMenu {
-    display: block;
+    display: flex;
     position: absolute;
-    right: 20px;
+    right: 15px;
     top: 15px;
     cursor: pointer;
+    height: 100%;
   }
-
+  .heading {
+    font-size: 20px;
+    color: aliceblue;
+    margin-right: 100px;
+  }
   .menuIcon {
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
   }
 }
